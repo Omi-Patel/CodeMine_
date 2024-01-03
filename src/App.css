@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
-#logo{
-  color: #338EF7;
+body{
+  /* background-color: #010314; */
+  background-color: #03131A;
+
+  color: whitesmoke;
 }
+
+#logo{
+  color: #8739F9;
+}
+
+#text{
+  color: white;
+}
+

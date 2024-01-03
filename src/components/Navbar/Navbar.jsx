@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <Navbar
-      className="bg-[#212121] text-white"
+      className="bg-[#242424] text-white"
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
@@ -36,7 +36,7 @@ export default function App() {
         <NavbarBrand>
           {/* <AcmeLogo /> */}
           <p className="font-bold text-inherit text-3xl" id="logo">
-            CodeMine
+            CodeMine_
           </p>
         </NavbarBrand>
       </NavbarContent>
@@ -44,27 +44,27 @@ export default function App() {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
           <p className="font-bold text-inherit text-3xl" id="logo">
-            CodeMine
+            CodeMine_
           </p>
         </NavbarBrand>
         <div className="flex justify-evenly w-96 mx-36 p-2">
-          <NavbarItem>
+          <NavbarItem className="hover:text-[#8FD6E8] font-bold delay-100">
             <NavLink color="foreground" to="/">
               HOME
             </NavLink>
           </NavbarItem>
-          <NavbarItem>
+          <NavbarItem className="hover:text-[#8FD6E8] font-bold ease-in-out delay-100">
             <NavLink color="foreground" to="/about">
               ABOUT
             </NavLink>
           </NavbarItem>
-          <NavbarItem>
+          <NavbarItem className="hover:text-[#8FD6E8] font-bold ease-in-out delay-100">
             <NavLink color="foreground" to="/blog">
               BLOGS
             </NavLink>
           </NavbarItem>
 
-          <NavbarItem>
+          <NavbarItem className="hover:text-[#8FD6E8] font-bold ease-in-out delay-100">
             <NavLink color="foreground" to="/contact">
               CONTACT
             </NavLink>
@@ -107,18 +107,18 @@ export default function App() {
         ))}
       </NavbarMenu> */}
 
-      <NavbarMenu className="bg-[#212121] text-white">
-        <NavbarMenuItem className="m-4 p-4 bg-[#414141]">
+      <NavbarMenu className="bg-[#1B1B1B] text-white">
+        <NavbarMenuItem className="mt-6 p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
           <NavLink to="/">HOME</NavLink>
         </NavbarMenuItem>
-        <NavbarMenuItem className="m-4 p-4 bg-[#414141]">
+        <NavbarMenuItem className=" p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
           <NavLink to="/about">ABOUT</NavLink>
         </NavbarMenuItem>
-        <NavbarMenuItem className="m-4 p-4 bg-[#414141]">
+        <NavbarMenuItem className=" p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
           <NavLink to="/blog">BLOGS</NavLink>
         </NavbarMenuItem>
 
-        <NavbarMenuItem className="m-4 p-4 bg-[#414141]">
+        <NavbarMenuItem className=" p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
           <NavLink to="/contact">CONTACT</NavLink>
         </NavbarMenuItem>
       </NavbarMenu>
