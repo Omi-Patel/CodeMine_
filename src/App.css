@@ -1,21 +1,35 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&family=Nosifer&family=Noto+Sans:wght@700&family=Preahvihear&family=Roboto:wght@100;300;400;500&family=Ubuntu:wght@400;500;700&family=Work+Sans:wght@300;400;700;900&display=swap");
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   /* background-color: #010314; */
-  background-color: #03131A;
-
+  background-color: #03131a;
   color: whitesmoke;
+
+  font-family: "Bebas Neue", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Nosifer", sans-serif;
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Preahvihear", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
-#logo{
-  color: #8739F9;
+#logo {
+  color: #8739f9;
 }
 
-#text{
+#text {
   color: white;
 }
 
+::selection {
+  color: orange;
+  background-color: #03131a;
+}

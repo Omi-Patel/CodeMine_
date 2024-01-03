@@ -54,7 +54,7 @@ export default function Component() {
                 title="Follow us"
                 className="tracking-widest text-[#8739F9] font-bold "
               />
-              <Footer.LinkGroup col className="text-white font-semibold">
+              <Footer.LinkGroup col className="text-white ">
                 <NavLink to="#" className="hover:text-[#8FD6E8]">
                   Github
                 </NavLink>
@@ -72,7 +72,7 @@ export default function Component() {
                 title="Legal"
                 className="tracking-widest text-[#8739F9] font-bold"
               />
-              <Footer.LinkGroup col className="text-white font-semibold">
+              <Footer.LinkGroup col className="text-white ">
                 <NavLink to="/" className="hover:text-[#8FD6E8]">
                   Privacy Policy
                 </NavLink>

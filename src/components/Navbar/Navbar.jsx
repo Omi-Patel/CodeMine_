@@ -17,7 +17,7 @@ import { NavLink } from "react-router-dom";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = ["HOME", "ABOUT", "BLOGS"];
+  // const menuItems = ["HOME", "ABOUT", "BLOGS"];
 
   return (
     <Navbar
