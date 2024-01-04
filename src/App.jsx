@@ -8,6 +8,9 @@ import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
+import Portfolio from "./components/portfolio/Portfolio";
+import Nopage from "./components/noPage/Nopage";
+
 
 const App = () => {
   return (
@@ -19,6 +22,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/*" element={<Nopage />} />
         </Routes>
         <Footer />
       </Router>

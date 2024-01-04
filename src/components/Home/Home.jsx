@@ -3,6 +3,7 @@ import React from "react";
 import logo from "./images/logo1.png";
 import me from "./images/om.jpeg";
 import { Avatar, Button, Image } from "@nextui-org/react";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -16,9 +17,8 @@ const Home = () => {
               <div className="m-4 mx-auto">
                 <h1 className="text-center p-4 title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100 tracking-wide">
                   "Explore, Engage, Evolve: Your Source for Dynamic Content"
-                  
                 </h1>
-                <p className="text-center p-4 leading-relaxed font-semibold">
+                <p className="text-center p-4 leading-relaxed font-semibold ">
                   Copper mug try-hard pitchfork pour-over freegan heirloom
                   neutra air plant cold-pressed tacos poke beard tote bag.
                   Heirloom echo park mlkshk tote bag selvage hot chicken
@@ -27,22 +27,24 @@ const Home = () => {
               </div>
               <div className="flex justify-center items-center m-4 mx-auto">
                 <Button
-                  className="mx-4 font-bold"
+                  className="mx-4 font-bold text-md"
                   color="primary"
                   variant="bordered"
                 >
-                  Blogs
+                  <NavLink to={"/blog"}>Blogs</NavLink>
                 </Button>
                 <Button
-                  className="font-bold"
+                  className="font-bold text-md"
                   color="primary"
                   variant="bordered"
                 >
-                  GitHub
+                  <NavLink to={"https://github.com/Omi-Patel"} target="_blank">
+                    GitHub
+                  </NavLink>
                 </Button>
 
                 <Button
-                  className="mx-4 font-bold"
+                  className="mx-4 font-bold text-md"
                   color="primary"
                   variant="bordered"
                 >

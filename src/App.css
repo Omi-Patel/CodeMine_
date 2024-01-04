@@ -11,14 +11,14 @@ body {
   background-color: #03131a;
   color: whitesmoke;
 
-  font-family: "Bebas Neue", sans-serif;
+  /* font-family: "Bebas Neue", sans-serif;
   font-family: "Montserrat", sans-serif;
   font-family: "Nosifer", sans-serif;
   font-family: "Noto Sans", sans-serif;
   font-family: "Preahvihear", sans-serif;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif; */
   font-family: "Ubuntu", sans-serif;
-  font-family: "Work Sans", sans-serif;
+  /* font-family: "Work Sans", sans-serif; */
 }
 
 #logo {

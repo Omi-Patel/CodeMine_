@@ -9,8 +9,12 @@ import {
   NavbarItem,
   Link,
   Button,
+  Image,
 } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
+import { Card } from "flowbite-react";
+import me from "../Home/images/om2.jpg";
+import { IoLogIn } from "react-icons/io5";
 
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 
@@ -74,14 +78,11 @@ export default function App() {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button
-            as={Link}
-            color="primary"
-            href="#"
-            variant="bordered"
-            className="font-bold"
-          >
-            PORTFOLIO
+          <Button color="primary" variant="bordered" className="font-bold">
+            <span className="text-2xl">
+              <IoLogIn />
+            </span>
+            <NavLink to={"/portfolio"}>PORTFOLIO</NavLink>
           </Button>
         </NavbarItem>
       </NavbarContent>
@@ -121,6 +122,45 @@ export default function App() {
         <NavbarMenuItem className=" p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
           <NavLink to="/contact">CONTACT</NavLink>
         </NavbarMenuItem>
+
+        {/* user card */}
+        <Card className="max-w-sm bg-[#212121] border-2 border-purple-700 mt-8">
+          <div className="flex flex-col items-center pb-10">
+            <Image
+              alt="Bonnie image"
+              height="96"
+              src={me}
+              width="96"
+              className="mb-3 rounded-full shadow-lg"
+            />
+            <h5 className="mb-1 text-xl font-medium text-gray-300 dark:text-white">
+              OM PATEL
+            </h5>
+            <span className="text-sm text-gray-400 dark:text-gray-400">
+              Full Stack Developer.
+            </span>
+            <div className="mt-4 flex space-x-3 lg:mt-6">
+              <NavLink to="https://bento.me/om-patel" target="_blank">
+                <Button
+                  className="mx-4 font-bold"
+                  color="primary"
+                  variant="bordered"
+                >
+                  Follow Me
+                </Button>
+              </NavLink>
+              <NavLink to={"/contact"}>
+                <Button
+                  className="mx-4 font-bold"
+                  color="primary"
+                  variant="bordered"
+                >
+                  Message
+                </Button>
+              </NavLink>
+            </div>
+          </div>
+        </Card>
       </NavbarMenu>
     </Navbar>
   );
