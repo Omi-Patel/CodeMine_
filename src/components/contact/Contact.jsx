@@ -1,11 +1,170 @@
-import React from 'react'
+import { Button } from "@nextui-org/react";
+import React, { useState } from "react";
+import { RiSendPlaneFill } from "react-icons/ri";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+// console.log(emailjs.sendForm);
 
 const Contact = () => {
-  return (
-    <div className='h-screen'>
-      CONTACT
-    </div>
-  )
-}
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-export default Contact
+  const submitForm = (e) => {
+    e.preventDefault();
+    // console.log(name, email, message);
+
+    try {
+      emailjs
+        .sendForm("codemine.com", "codemine_07", e.target, "EVrTzfRVTIyzWQgRs")
+        .then(
+          (result) => {
+            console.log(result.text);
+            toast.success("Message Sent");
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+
+      setName("");
+      setEmail("");
+      setMessage("");
+
+      //ee
+    } catch (error) {
+      console.log(error);
+      toast.error("Try Again!");
+    }
+  };
+
+  // console.log(status);
+
+  return (
+    <div className="h-full">
+      <div></div>
+      <div className=" text-gray-400 body-font bg-gradient-to-r from-[#0B0C10] to-[#1F2833]">
+        <section className="text-gray-600 body-font relative">
+          <div className="container px-5 py-24 mx-auto">
+            <div className="flex flex-col text-center w-full mb-12">
+              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">
+                Contact <span className="text-[#8739f9]">Us</span>
+              </h1>
+              <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-300 text-xl">
+                Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
+                gentrify.
+              </p>
+            </div>
+            <div className="lg:w-1/2 md:w-2/3 mx-auto">
+              <form onSubmit={submitForm}>
+                <div className="flex flex-wrap -m-2">
+                  <div className="p-2 lg:w-1/2 sm:w-full">
+                    <div className="relative ">
+                      <label
+                        htmlFor="name"
+                        className="leading-7 text-md text-white"
+                      >
+                        Name
+                      </label>
+                      <input
+                        value={name}
+                        onChange={(e) => {
+                          setName(e.target.value);
+                        }}
+                        required
+                        type="text"
+                        id="name"
+                        name="name"
+                        className="w-full bg-gray-800 bg-opacity-40 rounded border   focus:ring-2  text-base outline-none text-gray-300 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-2 lg:w-1/2 sm:w-full">
+                    <div className="relative">
+                      <label
+                        htmlFor="email"
+                        className="leading-7 text-md text-white"
+                      >
+                        Email
+                      </label>
+                      <input
+                        value={email}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
+                        required
+                        type="email"
+                        id="email"
+                        name="email"
+                        className="w-full bg-gray-800 bg-opacity-40 rounded border   focus:ring-2   text-base outline-none text-gray-300 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-2 w-full">
+                    <div className="relative">
+                      <label
+                        htmlFor="message"
+                        className="leading-7 text-md text-white"
+                      >
+                        Message
+                      </label>
+                      <textarea
+                        value={message}
+                        onChange={(e) => {
+                          setMessage(e.target.value);
+                        }}
+                        required
+                        id="message"
+                        name="message"
+                        className="w-full bg-gray-800 bg-opacity-40 rounded border   focus:ring-2  h-32 text-base outline-none text-gray-300 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div className="p-2 w-full">
+                    <Button
+                      className="font-bold text-xl px-4 py-4"
+                      color="primary"
+                      variant="bordered"
+                      type="submit"
+                      // disabled = {true}
+                    >
+                      <span className="text-xl">
+                        <RiSendPlaneFill />
+                      </span>
+                      Send
+                    </Button>
+                  </div>
+                  <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+                    <a className="text-purple-500">codemine@gmail.com</a>
+                    <p className="leading-normal my-5">
+                      07 OM PATEL.
+                      <br />
+                      Gujarat, IN 123456
+                    </p>
+                    <h1>Thank you For reaching out to us.</h1>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={1200}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;

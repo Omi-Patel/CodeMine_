@@ -119,7 +119,7 @@ const About = () => {
                 valueable asset to any web development team.
               </Blockquote>
               {/* <Divider className="m-4" /> */}
-              <div className="flex justify-center m-4">
+              <div className="flex justify-center m-4 border-t pt-8 mt-8">
                 <Button
                   className=" font-bold text-md"
                   color="primary"

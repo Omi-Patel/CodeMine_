@@ -11,7 +11,6 @@ import Footer from "./components/footer/Footer";
 import Portfolio from "./components/portfolio/Portfolio";
 import Nopage from "./components/noPage/Nopage";
 
-
 const App = () => {
   return (
     <>
