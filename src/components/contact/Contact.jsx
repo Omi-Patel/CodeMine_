@@ -26,6 +26,7 @@ const Contact = () => {
           },
           (error) => {
             console.log(error.text);
+            toast.error("Try Again!");
           }
         );
 
@@ -36,7 +37,6 @@ const Contact = () => {
       //ee
     } catch (error) {
       console.log(error);
-      toast.error("Try Again!");
     }
   };
 
@@ -138,19 +138,19 @@ const Contact = () => {
                   </div>
                   <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                     <a className="text-purple-500">codemine@gmail.com</a>
-                    <p className="leading-normal my-5">
+                    <p className="leading-normal my-5 text-blue-100">
                       07 OM PATEL.
                       <br />
                       Gujarat, IN 123456
                     </p>
-                    <h1>Thank you For reaching out to us.</h1>
+                    <h1 className="text-gray-500">Thank you For reaching out to us ❤️.</h1>
                   </div>
                 </div>
               </form>
             </div>
           </div>
           <ToastContainer
-            position="bottom-right"
+            position="top-right"
             autoClose={1200}
             hideProgressBar={false}
             newestOnTop={false}

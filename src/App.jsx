@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import About from "./components/about/About";
 import Blog from "./components/blogs/Blog";
+import BlogInfo from "./components/blogs/BlogInfo";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Contact from "./components/contact/Contact";
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/bloginfo/:id" element={<BlogInfo />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/*" element={<Nopage />} />
