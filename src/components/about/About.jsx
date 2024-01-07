@@ -47,6 +47,35 @@ const About = () => {
         </Carousel>
       </div> */}
 
+      {/* carousel */}
+      <div className="w-[90%] mx-auto">
+        <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+          <Carousel slideInterval={5000}>
+            <img
+              src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
+              alt="..."
+            />
+            <img
+              src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
+              alt="..."
+            />
+            <img
+              src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+              alt="..."
+            />
+            <img
+              src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
+              alt="..."
+            />
+            <img
+              src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
+              alt="..."
+            />
+          </Carousel>
+        </div>
+      </div>
+
+      {/* hero */}
       <div>
         <section className="text-gray-600 body-font">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -96,11 +125,11 @@ const About = () => {
         </section>
       </div>
 
-      <div>
+      <div className="">
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-24 mx-auto flex flex-col">
             <div className="lg:w-4/6 mx-auto">
-              <div className="flex flex-col sm:flex-row mt-10">
+              <div className="flex flex-col sm:flex-row ">
                 <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
                   <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
                     {/* <Image src={me} className="rounded-xl " /> */}

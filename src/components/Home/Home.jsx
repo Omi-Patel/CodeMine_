@@ -10,6 +10,10 @@ const Home = () => {
     <>
       {/* copy */}
 
+      {/* <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 border-2 bg-[url('https://wallpapercave.com/wp/wp2406485.jpg')] bg-cover bg-no-repeat bg-center w-[80%] mx-auto">
+        Photo
+      </div> */}
+
       <div className="h-full">
         <section className="text-gray-400 body-font bg-gradient-to-r from-[#0B0C10] to-[#1F2833]">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">

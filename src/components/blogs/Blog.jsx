@@ -7,6 +7,10 @@ const Blog = () => {
   const arr = [1, 2, 3];
   return (
     <div className="h-full bg-gradient-to-r from-[#0B0C10] to-[#1F2833]">
+      {/* <div id="aboutBack">
+        <div id="text">Read Blogs On CodeMine_</div>
+      </div> */}
+
       {/* blog card */}
       <div className="border-2">
         <section className="text-gray-400 body-font">
