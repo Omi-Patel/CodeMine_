@@ -17,38 +17,41 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Dashboard from "./components/blogs/Dashboard";
 import AdminLogin from "./components/AdminLogin/AdminLogin";
+import MyState from "./context/myState";
 
 const App = () => {
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/createblog" element={<CreateBlog />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/bloginfo/:id" element={<BlogInfo />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/adminlogin" element={<AdminLogin />} />
-          <Route path="/*" element={<Nopage />} />
-        </Routes>
-        <ToastContainer
-          position="top-right"
-          autoClose={1500}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-        />
-        <Footer />
-      </Router>
+      <MyState>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/createblog" element={<CreateBlog />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/bloginfo/:id" element={<BlogInfo />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/adminlogin" element={<AdminLogin />} />
+            <Route path="/*" element={<Nopage />} />
+          </Routes>
+          <ToastContainer
+            position="top-right"
+            autoClose={1500}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
+          <Footer />
+        </Router>
+      </MyState>
     </>
   );
 };
