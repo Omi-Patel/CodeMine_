@@ -1,9 +1,8 @@
 import { Button } from "@nextui-org/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiSendPlaneFill } from "react-icons/ri";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 // console.log(emailjs.sendForm);
 
@@ -22,7 +21,7 @@ const Contact = () => {
         .then(
           (result) => {
             console.log(result.text);
-            toast.success("Message Sent");
+            toast.success("Message Sent Successfull!");
           },
           (error) => {
             console.log(error.text);
@@ -41,6 +40,10 @@ const Contact = () => {
   };
 
   // console.log(status);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="h-full">
@@ -143,24 +146,14 @@ const Contact = () => {
                       <br />
                       Gujarat, IN 123456
                     </p>
-                    <h1 className="text-gray-500">Thank you For reaching out to us ❤️.</h1>
+                    <h1 className="text-gray-500">
+                      Thank you For reaching out to us ❤️.
+                    </h1>
                   </div>
                 </div>
               </form>
             </div>
           </div>
-          <ToastContainer
-            position="top-right"
-            autoClose={1200}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="colored"
-          />
         </section>
       </div>
     </div>

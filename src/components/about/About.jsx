@@ -16,10 +16,14 @@ import { IoLogIn } from "react-icons/io5";
 // import illustration from '../Home/images/img2.webp'
 import illustration from "../Home/images/img.png";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="h-full bg-gradient-to-l from-[#0B0C10] to-[#1F2833]">
       {/* <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">

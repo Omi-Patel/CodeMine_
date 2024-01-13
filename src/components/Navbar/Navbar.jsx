@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -21,6 +21,10 @@ import { IoLogIn } from "react-icons/io5";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // const menuItems = ["HOME", "ABOUT", "BLOGS"];
 
   return (
@@ -36,15 +40,17 @@ export default function App() {
         />
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden pr-3" justify="center">
+      {/* mobile */}
+      <NavbarContent className="sm:hidden px-1" justify="center">
         <NavbarBrand>
           {/* <AcmeLogo /> */}
-          <p className="font-bold text-inherit text-3xl" id="logo">
+          <p className="font-bold text-inherit text-2xl" id="logo">
             CodeMine_
           </p>
         </NavbarBrand>
       </NavbarContent>
 
+      {/* desktop */}
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
           <p className="font-bold text-inherit text-3xl" id="logo">
@@ -53,23 +59,39 @@ export default function App() {
         </NavbarBrand>
         <div className="flex justify-evenly w-96 mx-36 p-2">
           <NavbarItem className="hover:text-[#8FD6E8] font-bold delay-100">
-            <NavLink color="foreground" to="/">
+            <NavLink
+              className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
+              color="foreground"
+              to="/"
+            >
               HOME
             </NavLink>
           </NavbarItem>
           <NavbarItem className="hover:text-[#8FD6E8] font-bold ease-in-out delay-100">
-            <NavLink color="foreground" to="/about">
+            <NavLink
+              className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
+              color="foreground"
+              to="/about"
+            >
               ABOUT
             </NavLink>
           </NavbarItem>
           <NavbarItem className="hover:text-[#8FD6E8] font-bold ease-in-out delay-100">
-            <NavLink color="foreground" to="/blog">
+            <NavLink
+              className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
+              color="foreground"
+              to="/blog"
+            >
               BLOGS
             </NavLink>
           </NavbarItem>
 
           <NavbarItem className="hover:text-[#8FD6E8] font-bold ease-in-out delay-100">
-            <NavLink color="foreground" to="/contact">
+            <NavLink
+              className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
+              color="foreground"
+              to="/contact"
+            >
               CONTACT
             </NavLink>
           </NavbarItem>
@@ -110,17 +132,37 @@ export default function App() {
 
       <NavbarMenu className="bg-[#1B1B1B] text-white">
         <NavbarMenuItem className="mt-6 p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
-          <NavLink to="/">HOME</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
+            to="/"
+          >
+            HOME
+          </NavLink>
         </NavbarMenuItem>
         <NavbarMenuItem className=" p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
-          <NavLink to="/about">ABOUT</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
+            to="/about"
+          >
+            ABOUT
+          </NavLink>
         </NavbarMenuItem>
         <NavbarMenuItem className=" p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
-          <NavLink to="/blog">BLOGS</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
+            to="/blog"
+          >
+            BLOGS
+          </NavLink>
         </NavbarMenuItem>
 
         <NavbarMenuItem className=" p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
-          <NavLink to="/contact">CONTACT</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
+            to="/contact"
+          >
+            CONTACT
+          </NavLink>
         </NavbarMenuItem>
 
         {/* user card */}

@@ -1,15 +1,28 @@
 import { Avatar, Button } from "@nextui-org/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import client from "../../contentfullClient/contentfull";
+// import client from "../../contentfullClient/contentfull";
+
+const arr = [1, 2, 3];
 
 const Blog = () => {
-  const arr = [1, 2, 3];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="h-full bg-gradient-to-r from-[#0B0C10] to-[#1F2833]">
       {/* <div id="aboutBack">
         <div id="text">Read Blogs On CodeMine_</div>
       </div> */}
+
+      <div>
+        <Button>
+          <NavLink to={"/adminlogin"}>Dashboard</NavLink>
+        </Button>
+      </div>
 
       {/* blog card */}
       <div className="border-2">

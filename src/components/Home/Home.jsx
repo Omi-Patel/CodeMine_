@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import logo from "./images/logo1.png";
 import me from "./images/om.jpeg";
@@ -6,6 +6,10 @@ import { Avatar, Button, Image } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       {/* copy */}
