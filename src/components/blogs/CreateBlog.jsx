@@ -8,6 +8,7 @@ import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { fireDB, storage } from "../../firebase/firebaseConfig";
+import { RiSendPlaneFill } from "react-icons/ri";
 
 const CreateBlog = () => {
   const [blogs, setBlogs] = useState({
@@ -127,7 +128,7 @@ const CreateBlog = () => {
       </div>
       {/* Four Editor  */}
       <div className="mt-4">
-        <label htmlFor="editor">Content Body  /</label>
+        <label htmlFor="editor">Content Body /</label>
         <Editor
           apiKey="5q5d8ffxuowsmao59j00xt3uai28xei7rkq8l6opze12lxdq"
           onEditorChange={(newValue, editor) => {
@@ -151,6 +152,9 @@ const CreateBlog = () => {
           variant="shadow"
           className="w-[10%] font-bold text-xl"
         >
+          <span className="text-xl">
+            <RiSendPlaneFill />
+          </span>
           Send
         </Button>
       </div>

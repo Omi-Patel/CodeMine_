@@ -7,6 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 import client from "../../contentfullClient/contentfull";
 import myContext from "../../context/myContext";
 import Loader from "../Loader/Loader";
+import { MdDashboardCustomize } from "react-icons/md";
 // import client from "../../contentfullClient/contentfull";
 
 const arr = [1, 2, 3];
@@ -17,8 +18,8 @@ const Blog = () => {
 
   const navigate = useNavigate();
 
-  console.log(getAllBlog);
-  console.log(loading);
+  // console.log(getAllBlog);
+  // console.log(loading);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,9 +31,13 @@ const Blog = () => {
         <div id="text">Read Blogs On CodeMine_</div>
       </div> */}
 
-      <div>
-        <Button>
-          <NavLink to={"/adminlogin"}>Dashboard</NavLink>
+      <div className=" p-4 flex justify-end">
+        <Button color="success" variant="shadow" className="font-bold text-xl">
+          <span>
+            <MdDashboardCustomize />
+          </span>
+
+          <NavLink to={"/dashboard"}>Dashboard !</NavLink>
         </Button>
       </div>
 
@@ -43,7 +48,9 @@ const Blog = () => {
           <div className="container px-5 py-10 mx-auto max-w-7xl ">
             {/* Top Heading  */}
             <div className="mb-5">
-              <h1 className=" text-center text-2xl font-bold">All Blogs</h1>
+              <h1 className=" text-center text-white text-3xl font-bold">
+                All Blogs
+              </h1>
             </div>
             {/* Main Content  */}
             {loading ? (

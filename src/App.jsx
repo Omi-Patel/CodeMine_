@@ -1,6 +1,11 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import About from "./components/about/About";
 import Blog from "./components/blogs/Blog";
@@ -30,7 +35,14 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/createblog" element={<CreateBlog />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRouteForAdmin>
+                  <Dashboard />
+                </ProtectedRouteForAdmin>
+              }
+            />
             <Route path="/bloginfo/:id" element={<BlogInfo />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
@@ -57,3 +69,13 @@ const App = () => {
 };
 
 export default App;
+
+export const ProtectedRouteForAdmin = ({ children }) => {
+  const admin = localStorage.getItem("admin");
+  // console.log(typeof admin);
+  if (admin === "loginasadminbyompatel07") {
+    return children;
+  } else {
+    return <Navigate to={"/adminlogin"} />;
+  }
+};

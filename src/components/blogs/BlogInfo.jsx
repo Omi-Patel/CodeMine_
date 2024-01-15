@@ -1,16 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import myContext from "../../context/myContext";
 import { doc, getDoc } from "firebase/firestore";
 import { fireDB } from "../../firebase/firebaseConfig";
 import Loader from "../Loader/Loader";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 const BlogInfo = () => {
   // let { id } = useParams();
   // console.log(id);
 
   const context = useContext(myContext);
-  const { setloading, loading, } = context;
+  const { setloading, loading } = context;
 
   const params = useParams();
 
@@ -35,7 +36,7 @@ const BlogInfo = () => {
   };
 
   useEffect(() => {
-    getAllBlogs()
+    getAllBlogs();
     window.scrollTo(0, 0);
   }, []);
 
@@ -47,6 +48,16 @@ const BlogInfo = () => {
   return (
     <div>
       <section className="rounded-lg h-full overflow-hidden max-w-4xl mx-auto px-4 ">
+      {/* go back */}
+        <div className="flex gap-2 items-center mt-4">
+          <NavLink to={"/blog"}>
+            <FaArrowAltCircleLeft size={25} />
+          </NavLink>
+
+          {/* Text  */}
+          <h1 className="text-3xl">Back !</h1>
+        </div>
+
         <div className=" py-4 lg:py-8">
           {loading ? (
             <Loader />

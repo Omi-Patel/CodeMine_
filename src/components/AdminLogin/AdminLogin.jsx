@@ -24,7 +24,8 @@ const AdminLogin = () => {
     } else if (email !== "admin@gmail.com" || password !== "adminpassword123") {
       return toast.error("Invalid Credentials !");
     } else {
-      toast.success("Logged In Successfully !")
+      toast.success("Logged In Successfully !");
+      localStorage.setItem("admin", "loginasadminbyompatel07");
       navigate("/dashboard");
     }
   };

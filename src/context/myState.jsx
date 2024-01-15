@@ -47,7 +47,7 @@ const MyState = (props) => {
     try {
       await deleteDoc(doc(fireDB, "blogPost", id));
       getAllBlogs();
-      toast.success("Blogs deleted successfully");
+      toast.success("Blog Deleted Successfully !");
     } catch (error) {
       console.log(error);
     }
