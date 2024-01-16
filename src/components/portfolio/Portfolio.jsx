@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
 import me from "../Home/images/om.jpeg";
+import photo from "./Images/portfolio.jpg";
+import data from "./data";
+
 import {
+  Accordion,
+  AccordionItem,
+  Avatar,
   Button,
   Card,
   CardBody,
@@ -31,9 +37,10 @@ import { Blockquote } from "flowbite-react";
 // import { Card } from "flowbite-react";
 
 const Portfolio = () => {
-  const arr = [1, 2, 3, 4, 5, 6, 7];
+  // const arr = [1, 2, 3, 4, 5, 6, 7];
 
-  // console.log(arr);
+  const projects = data.projects;
+  // console.log(projects[0]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -111,7 +118,7 @@ const Portfolio = () => {
         </section>
       </div> */}
 
-      <div className="border-2">
+      <div className="">
         <section className="text-gray-600 body-font ">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="m-4 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -196,7 +203,7 @@ const Portfolio = () => {
       </div>
 
       {/* journey */}
-      <div className="border-2">
+      <div className="">
         <h1 className="text-center mb-8 text-4xl">
           My <span className="text-[#8739f9]">Journey</span>!
         </h1>
@@ -295,58 +302,61 @@ const Portfolio = () => {
       </div>
 
       {/* Project */}
-      <div className="border-2 mt-4 w-full ">
+      <div className=" mt-4 w-full ">
         <div>
           <h1 className="text-center m-8 text-4xl ">Projects!</h1>
         </div>
 
         {/* work card 4 in rows */}
 
-        <div className="border-2  px-4 w-[90%] mx-auto m-4">
-          {arr.map((e, index) => {
+        <div className="  px-4 w-[90%] mx-auto m-4">
+          {projects.map((e, index) => {
+            {
+              /* console.log(e); */
+            }
             return (
-              <div className=" m-4 auto-rows-fr inline-block" key={index}>
+              <div className=" m-3 auto-rows-fr inline-block" key={index}>
                 <Card
                   isFooterBlurred
-                  className="w-full h-[300px] col-span-12 sm:col-span-7"
+                  className="w-full h-[300px] col-span-12 sm:col-span-7 border-1 border-blue-600"
                 >
-                  <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                    <p className="text-tiny text-white/60 uppercase font-bold">
-                      Your day your way
-                    </p>
-                    <h4 className="text-white/90 font-medium text-xl">
-                      Your checklist for better sleep
+                  <CardHeader className="absolute z-10 flex-col items-start bg-black">
+                    <h4 className="text-white/90 font-medium text-xl uppercase  font-bold">
+                      {/* title */}
+                      {e.title}
                     </h4>
+                    <p className="text-tiny text-white/60 ">
+                      {e.description}
+                      {/* description */}
+                    </p>
                   </CardHeader>
+
                   <Image
                     removeWrapper
                     alt="Relaxing app background"
-                    className="z-0 w-full h-full object-cover opacity-50 hover:opacity-100"
-                    src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
+                    className="z-0 h-full object-contain opacity-50 hover:opacity-100"
+                    width={300}
+                    src={e.imgSrc}
                   />
-                  <CardFooter className="absolute bg-black/60 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+
+                  <CardFooter className="absolute bg-black/90 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
                     <div className="flex flex-grow gap-2 items-center">
                       <Button
                         className="font-bold text-md"
-                        color="primary"
-                        variant="bordered"
+                        color="danger"
+                        variant="flat"
                       >
                         <NavLink to={"#"} target="_blank">
                           Code
                         </NavLink>
                       </Button>
-                      <div className="flex flex-col">
-                        <p className="text-tiny text-center text-white/60">
-                          Breathing App
-                        </p>
-                      </div>
                     </div>
                     <Button
                       className="font-bold text-md"
-                      color="primary"
+                      color="success"
                       variant="bordered"
                     >
-                      <NavLink to={"#"} target="_blank">
+                      <NavLink to={e.url} target="_blank">
                         Live Link
                       </NavLink>
                     </Button>
@@ -388,7 +398,7 @@ const Portfolio = () => {
       </div>
 
       {/* testimonial */}
-      <div className="border-2">
+      <div className="">
         <section className="text-gray-600 body-font mx-8">
           <div className="container px-5 py-24 mx-auto">
             <h1 className="text-3xl font-medium title-font text-gray-100 mb-12 text-center">
@@ -465,6 +475,8 @@ const Portfolio = () => {
           </div>
         </section>
       </div>
+
+      {/* Accordian */}
     </div>
   );
 };
