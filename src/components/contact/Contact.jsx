@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { RiSendPlaneFill } from "react-icons/ri";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 // console.log(emailjs.sendForm);
 
@@ -21,11 +22,11 @@ const Contact = () => {
         .then(
           (result) => {
             console.log(result.text);
-            toast.success("Message Sent Successfull!");
+            toast.success("Message Sent Successfully !");
           },
           (error) => {
             console.log(error.text);
-            toast.error("Try Again!");
+            toast.error("Try Again !");
           }
         );
 
@@ -52,12 +53,14 @@ const Contact = () => {
         <section className="text-gray-600 body-font relative">
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-col text-center w-full mb-12">
-              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">
+              <h1 className=" text-4xl font-bold  title-font mb-8 text-gray-100">
                 Contact <span className="text-[#8739f9]">Us</span>
               </h1>
               <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-300 text-xl">
-                Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-                gentrify.
+                Thank you for choosing{" "}
+                <span className="text-[#8739f9]">CodeMine_</span> as your
+                digital sanctuary. We're excited to be part of your journey.
+                Click, explore, and let the adventure begin!
               </p>
             </div>
             <div className="lg:w-1/2 md:w-2/3 mx-auto">
@@ -131,7 +134,6 @@ const Contact = () => {
                       color="primary"
                       variant="bordered"
                       type="submit"
-                      // disabled = {true}
                     >
                       <span className="text-xl">
                         <RiSendPlaneFill />

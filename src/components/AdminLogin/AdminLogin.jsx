@@ -37,7 +37,7 @@ const AdminLogin = () => {
           <div className="text-center flex flex-col justify-center items-center mt-10 ">
             <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-yellow-300 dark:text-gray-200" />
             <h3 className="mb-5 text-lg font-normal text-gray-300 dark:text-gray-400">
-              To Access Admin Dashboard, You Need To Log In as Admin !
+              Only Admin Can Access The Dashboard !
             </h3>
             <h3 className="mb-5 text-lg font-normal text-gray-300 dark:text-gray-400">
               Are you sure, you want to Log In as Admin ?

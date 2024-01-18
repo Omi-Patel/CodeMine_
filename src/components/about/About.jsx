@@ -9,7 +9,6 @@ import {
 import { Blockquote, Carousel } from "flowbite-react";
 import me from "../Home/images/om2.jpg";
 import { FaUserTie } from "react-icons/fa6";
-import { BsGithub } from "react-icons/bs";
 import { FaBloggerB } from "react-icons/fa6";
 import { IoLogIn } from "react-icons/io5";
 
@@ -18,6 +17,7 @@ import illustration from "../Home/images/img.png";
 
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const About = () => {
   useEffect(() => {
@@ -183,15 +183,10 @@ const About = () => {
                     color="primary"
                     variant="bordered"
                   >
-                    <span className="text-xl">
-                      <BsGithub />
+                    <span className="text-2xl">
+                      <IoLogIn />
                     </span>
-                    <NavLink
-                      to={"https://github.com/Omi-Patel"}
-                      target="_blank"
-                    >
-                      About Me!
-                    </NavLink>
+                    <NavLink to={"/portfolio"}>About Me!</NavLink>
                   </Button>
                 </div>
               </div>

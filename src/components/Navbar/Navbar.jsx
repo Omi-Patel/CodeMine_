@@ -15,6 +15,11 @@ import { NavLink } from "react-router-dom";
 import { Card } from "flowbite-react";
 import me from "../Home/images/om2.jpg";
 import { IoLogIn } from "react-icons/io5";
+import { FaCode } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import { FaCircleInfo } from "react-icons/fa6";
+import { ImBlog } from "react-icons/im";
+import { BiSolidMessageRoundedEdit } from "react-icons/bi";
 
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 
@@ -43,7 +48,6 @@ export default function App() {
       {/* mobile */}
       <NavbarContent className="sm:hidden px-1" justify="center">
         <NavbarBrand>
-          {/* <AcmeLogo /> */}
           <p className="font-bold text-inherit text-2xl" id="logo">
             CodeMine_
           </p>
@@ -53,8 +57,11 @@ export default function App() {
       {/* desktop */}
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
+          <span className="text-3xl mr-2">
+            <FaCode />
+          </span>
           <p className="font-bold text-inherit text-3xl" id="logo">
-            CodeMine_
+            <NavLink to={"/"}>CodeMine_</NavLink>
           </p>
         </NavbarBrand>
         <div className="flex justify-evenly w-96 mx-36 p-2">
@@ -109,59 +116,55 @@ export default function App() {
         </NavbarItem>
       </NavbarContent>
 
-      {/* <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <NavLink
-              className="w-full"
-              color={
-                index === 2
-                  ? "warning"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              to="#"
-              size="lg"
-            >
-              {item}
-            </NavLink>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu> */}
-
+      {/* mobile menu */}
       <NavbarMenu className="bg-[#1B1B1B] text-white">
-        <NavbarMenuItem className="mt-6 p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
+        <NavbarMenuItem className="mt-6 p-4 gap-2 hover:text-[#8FD6E8] font-bold ">
           <NavLink
             className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
             to="/"
+            onClick={() => setIsMenuOpen(false)}
           >
-            HOME
+            <span className="text-2xl flex items-center gap-3">
+              <FaHome />
+              <h1> HOME</h1>
+            </span>
           </NavLink>
         </NavbarMenuItem>
-        <NavbarMenuItem className=" p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
+        <NavbarMenuItem className=" p-4 hover:text-[#8FD6E8] font-bold">
           <NavLink
             className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
             to="/about"
+            onClick={() => setIsMenuOpen(false)}
           >
-            ABOUT
+            <span className="text-2xl flex items-center gap-3">
+              <FaCircleInfo />
+              <h1>ABOUT</h1>
+            </span>
           </NavLink>
         </NavbarMenuItem>
-        <NavbarMenuItem className=" p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
+        <NavbarMenuItem className=" p-4 hover:text-[#8FD6E8] font-bold">
           <NavLink
             className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
             to="/blog"
+            onClick={() => setIsMenuOpen(false)}
           >
-            BLOGS
+            <span className="text-2xl flex items-center gap-3">
+              <ImBlog />
+              <h1>BLOGS</h1>
+            </span>
           </NavLink>
         </NavbarMenuItem>
 
-        <NavbarMenuItem className=" p-4 bg-[#414141] hover:text-[#8FD6E8] font-bold">
+        <NavbarMenuItem className=" p-4  hover:text-[#8FD6E8] font-bold">
           <NavLink
             className={({ isActive }) => (isActive ? "text-[#8739f9]" : "")}
             to="/contact"
+            onClick={() => setIsMenuOpen(false)}
           >
-            CONTACT
+            <span className="text-2xl flex items-center gap-3">
+              <BiSolidMessageRoundedEdit />
+              <h1>CONTACT</h1>
+            </span>
           </NavLink>
         </NavbarMenuItem>
 
@@ -191,15 +194,15 @@ export default function App() {
                   Follow Me
                 </Button>
               </NavLink>
-              <NavLink to={"/contact"}>
-                <Button
-                  className="mx-4 font-bold"
-                  color="primary"
-                  variant="bordered"
-                >
+              <Button
+                className="mx-4 font-bold"
+                color="primary"
+                variant="bordered"
+              >
+                <NavLink to={"/contact"} onClick={() => setIsMenuOpen(false)}>
                   Message
-                </Button>
-              </NavLink>
+                </NavLink>
+              </Button>
             </div>
           </div>
         </Card>

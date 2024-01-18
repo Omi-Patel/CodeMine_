@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import me from "../Home/images/om.jpeg";
-import photo from "./Images/portfolio.jpg";
 import data from "./data";
+import dhruv from "./Images/Dhruv.jpeg";
 
 import {
   Accordion,
@@ -17,6 +17,7 @@ import {
 import { NavLink } from "react-router-dom";
 import { BsGithub } from "react-icons/bs";
 import { IoLogIn } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 import {
   VerticalTimeline,
@@ -46,78 +47,29 @@ const Portfolio = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const animations = {
+    whileInView: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+    },
+    one: {
+      opacity: 0,
+      x: "-100%",
+    },
+
+    twoAndThree: {
+      opacity: 0,
+      y: "-100%",
+    },
+    four: {
+      opacity: 0,
+      x: "100%",
+    },
+  };
+
   return (
     <div className="h-full bg-gradient-to-l from-[#0B0C10] to-[#1F2833]">
-      {/* <div className="border-2">
-        <section className="text-gray-600 body-font">
-          <div className="container px-5 py-24 mx-auto flex flex-col">
-            <div className="lg:w-4/6 mx-auto">
-              <div className="flex flex-col sm:flex-row mt-10">
-                <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
-                  <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
-                    <Image src={me} className="rounded-xl " />
-                  </div>
-                  <div className="flex flex-col items-center text-center justify-center">
-                    <h2 className="font-medium title-font mt-4 text-gray-200 text-lg">
-                      Hey There Champs!! <br /> I'm
-                      <span className="text-[#8739f9]"> Om</span> Patel.
-                    </h2>
-                    <div className="w-12 h-1 bg-purple-500 rounded mt-2 mb-4"></div>
-                    <p className="text-base text-gray-500 tracking-wide">
-                      I design and code beautifully simple things, and I love
-                      what I do! <br />I Build things for the Web.
-                    </p>
-                  </div>
-                </div>
-                <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-                  <h1 className="text-2xl text-white">
-                    Get to know <span className="text-[#8739f9]">Me</span>!
-                  </h1>
-                  <p className="leading-relaxed text-lg mb-4 mt-4 text-gray-400 tracking-wide">
-                    I'm a Frontend Web Developer building the Front-end of
-                    Websites and Web Applications that leads to the success of
-                    the overall product. Check out some of my work in the
-                    Projects section.
-                  </p>
-                  <p className="leading-relaxed text-lg mb-4 mt-4 text-gray-400 tracking-wide">
-                    I also like sharing content related to the stuff that I have
-                    learned over the years in Web Development so it can help
-                    other people of the Dev Community. Feel free to Connect or
-                    Follow me on my{" "}
-                    <span>
-                      <a
-                        className="text-[#8739f9]"
-                        href="https://www.linkedin.com/in/ompatel7113/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Linkedin
-                      </a>
-                    </span>
-                    .
-                  </p>
-                  <Button
-                    className=" font-bold text-md"
-                    color="primary"
-                    variant="bordered"
-                  >
-                    <span className="text-xl">
-                      <BsGithub />
-                    </span>
-                    <NavLink
-                      to={"https://github.com/Omi-Patel"}
-                      target="_blank"
-                    >
-                      About Me!
-                    </NavLink>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div> */}
-
       <div className="">
         <section className="text-gray-600 body-font ">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -304,18 +256,21 @@ const Portfolio = () => {
       {/* Project */}
       <div className=" mt-4 w-full ">
         <div>
-          <h1 className="text-center m-8 text-4xl ">Projects!</h1>
+          <h1 className="text-center m-8 text-4xl ">Some Works !</h1>
         </div>
 
         {/* work card 4 in rows */}
 
-        <div className="  px-4 w-[90%] mx-auto m-4">
+        <div className="px-4 w-[90%] mx-auto mx-4">
           {projects.map((e, index) => {
-            {
-              /* console.log(e); */
-            }
             return (
-              <div className=" m-3 auto-rows-fr inline-block" key={index}>
+              <motion.div
+                whileInView={animations.whileInView}
+                initial={animations.one}
+                transition={{ delay: 0.5 }}
+                className=" m-4 auto-rows-fr inline-block"
+                key={index}
+              >
                 <Card
                   isFooterBlurred
                   className="w-full h-[300px] col-span-12 sm:col-span-7 border-1 border-blue-600"
@@ -340,7 +295,12 @@ const Portfolio = () => {
                   />
 
                   <CardFooter className="absolute bg-black/90 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-                    <div className="flex flex-grow gap-2 items-center">
+                    <motion.div
+                      whileInView={animations.whileInView}
+                      initial={animations.twoAndThree}
+                      transition={{ delay: 0.5 }}
+                      className="flex flex-grow gap-2 items-center"
+                    >
                       <Button
                         className="font-bold text-md"
                         color="danger"
@@ -350,7 +310,7 @@ const Portfolio = () => {
                           Code
                         </NavLink>
                       </Button>
-                    </div>
+                    </motion.div>
                     <Button
                       className="font-bold text-md"
                       color="success"
@@ -362,7 +322,7 @@ const Portfolio = () => {
                     </Button>
                   </CardFooter>
                 </Card>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -402,7 +362,7 @@ const Portfolio = () => {
         <section className="text-gray-600 body-font mx-8">
           <div className="container px-5 py-24 mx-auto">
             <h1 className="text-3xl font-medium title-font text-gray-100 mb-12 text-center">
-              Testimonials
+              Testimonials !
             </h1>
             <div className="flex flex-wrap -m-4 ">
               <div className="p-4 md:w-1/2 w-full">
@@ -416,16 +376,16 @@ const Portfolio = () => {
                     <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
                   </svg>
                   <p className="leading-relaxed mb-6 text-gray-300">
-                    You are not just a skilled professional; he is a
+                    You are not just a skilled professional; you are a
                     collaborative team player who actively seeks feedback and
-                    incorporates it into his work. His attention to detail,
+                    incorporates it into your work. Your attention to detail,
                     creativity, and commitment to delivering top-notch results
-                    make him a valuable asset to any project. Outstanding!!
+                    make you a valuable asset to any project. Outstanding!!
                   </p>
                   <a className="inline-flex items-center">
                     <img
                       alt="testimonial"
-                      src="https://dummyimage.com/106x106"
+                      src="https://i.pravatar.cc/150?u=a04258114e29026708c"
                       className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
                     />
                     <span className="flex-grow flex flex-col pl-4">
@@ -459,7 +419,7 @@ const Portfolio = () => {
                   <a className="inline-flex items-center">
                     <img
                       alt="testimonial"
-                      src="https://dummyimage.com/107x107"
+                      src={dhruv}
                       className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
                     />
                     <span className="flex-grow flex flex-col pl-4">

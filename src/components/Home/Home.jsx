@@ -4,6 +4,10 @@ import logo from "./images/logo1.png";
 import me from "./images/om.jpeg";
 import { Avatar, Button, Image } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
+import { BsGithub } from "react-icons/bs";
+import { FaBloggerB } from "react-icons/fa6";
+import { FaPager } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Home = () => {
   useEffect(() => {
@@ -18,61 +22,81 @@ const Home = () => {
         Photo
       </div> */}
 
-      <div className="h-full">
-        <section className="text-gray-400 body-font bg-gradient-to-r from-[#0B0C10] to-[#1F2833]">
+      <div className="h-full bg-gradient-to-r from-[#0B0C10] to-[#1F2833]">
+        <section className="text-gray-400 body-font ">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
               <div className="m-4 mx-auto">
-                <h1 className="text-center p-4 title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100 tracking-wide">
+                <motion.h1
+                  initial={{ opacity: 0, y: "-100%" }}
+                  whileInView={{ opacity: 1, y: "0" }}
+                  className="text-center p-4 title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100 tracking-wide"
+                >
                   "Explore, Engage, Evolve: Your Source for Dynamic Content"
-                </h1>
+                </motion.h1>
                 <p className="text-center p-4 leading-relaxed font-semibold ">
-                  Copper mug try-hard pitchfork pour-over freegan heirloom
-                  neutra air plant cold-pressed tacos poke beard tote bag.
-                  Heirloom echo park mlkshk tote bag selvage hot chicken
-                  authentic tumeric truffaut hexagon try-hard chambray.
+                  Greetings, Dear readers, and welcome to CodeMine ! We are
+                  thrilled to have you here, ready to embark on a journey of
+                  discovery, inspiration, and growth. This digital space is more
+                  than a blog; it's a haven for minds seeking enrichment and
+                  hearts yearning for connection.
                 </p>
               </div>
               <div className="flex justify-center items-center m-4 mx-auto">
-                <Button
-                  className="mx-4 font-bold text-md"
-                  color="primary"
-                  variant="bordered"
+                <motion.div
+                  initial={{ y: "-100%", opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
                 >
-                  <NavLink to={"/blog"}>Blogs</NavLink>
-                </Button>
-                <Button
-                  className="font-bold text-md"
-                  color="primary"
-                  variant="bordered"
+                  <Button
+                    className="mx-4 font-bold text-md"
+                    color="primary"
+                    variant="bordered"
+                  >
+                    <span className="text-xl">
+                      <FaBloggerB />
+                    </span>
+                    <NavLink to={"/blog"}>Blogs</NavLink>
+                  </Button>
+                </motion.div>
+                <motion.div
+                  initial={{ y: "-100%", opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 }}
                 >
-                  <NavLink to={"https://github.com/Omi-Patel"} target="_blank">
-                    GitHub
-                  </NavLink>
-                </Button>
+                  <Button
+                    className="font-bold text-md"
+                    color="primary"
+                    variant="bordered"
+                  >
+                    <span className="text-xl">
+                      <BsGithub />
+                    </span>
+                    <NavLink
+                      to={"https://github.com/Omi-Patel"}
+                      target="_blank"
+                    >
+                      GitHub
+                    </NavLink>
+                  </Button>
+                </motion.div>
 
-                <Button
-                  className="mx-4 font-bold text-md"
-                  color="primary"
-                  variant="bordered"
+                <motion.div
+                  initial={{ y: "-100%", opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.8 }}
                 >
-                  Resume
-                </Button>
-              </div>
-
-              <div className="flex flex-col justify-center items-center  m-4 mx-auto">
-                <div>
-                  <Avatar
-                    // isBordered
-                    radius="lg"
-                    src={me}
-                    className="w-20 h-20 text-large"
-                  />
-                </div>
-                <div className="my-2 font-semibold">
-                  <span className="text-[#8739F9]">OM</span> PATEL
-                </div>
-                <div>Developer From India 💟.</div>
+                  <Button
+                    className="mx-4 font-bold text-md"
+                    color="primary"
+                    variant="bordered"
+                  >
+                    <span className="text-xl">
+                      <FaPager />
+                    </span>
+                    Resume
+                  </Button>
+                </motion.div>
               </div>
             </div>
 
@@ -87,6 +111,71 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        <div>
+          <section className="text-gray-300 body-font mx-4">
+            <div className="container px-5 py-24 mx-auto flex flex-wrap">
+              <div className="flex flex-wrap -m-4">
+                <div className="p-4 lg:w-1/2 md:w-full">
+                  <div className="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col bg-[#212121]">
+                    <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        className="w-8 h-8"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                      </svg>
+                    </div>
+                    <div className="flex-grow">
+                      <h2 className="text-blue-200 text-lg title-font font-medium mb-3">
+                        Explore Limitless Horizons:
+                      </h2>
+                      <p className="leading-relaxed text-base">
+                        At Our Platform, we believe in the power of exploration
+                        and the beauty of diverse perspectives. Click around and
+                        let your curiosity be your guide. Don't miss out on the
+                        latest updates and exclusive content!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4 lg:w-1/2 md:w-full">
+                  <div className="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col bg-[#212121]">
+                    <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        className="w-10 h-10"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                    </div>
+                    <div className="flex-grow">
+                      <h2 className="text-blue-200 text-lg title-font font-medium mb-3">
+                        Let's Connect:
+                      </h2>
+                      <p className="leading-relaxed text-base">
+                        Follow us on Social Media Platforms to stay connected
+                        with our vibrant community. Share your thoughts,
+                        insights, and favorite posts. We love hearing from you!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     </>
   );
