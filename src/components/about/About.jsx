@@ -18,6 +18,8 @@ import illustration from "../Home/images/img.png";
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import p1 from "../Home/images/bg5.png";
+import p2 from "../Home/images/bg4.jpg";
 
 const About = () => {
   useEffect(() => {
@@ -26,57 +28,9 @@ const About = () => {
 
   return (
     <div className="h-full bg-gradient-to-l from-[#0B0C10] to-[#1F2833]">
-      {/* <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-        <Carousel>
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
-            alt="..."
-          />
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-            alt="..."
-          />
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-            alt="..."
-          />
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
-            alt="..."
-          />
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-            alt="..."
-          />
-        </Carousel>
-      </div> */}
-
-      {/* carousel */}
-      <div className="w-[90%] mx-auto">
-        <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-          <Carousel slideInterval={5000}>
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
-              alt="..."
-            />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-              alt="..."
-            />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-              alt="..."
-            />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
-              alt="..."
-            />
-            <img
-              src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-              alt="..."
-            />
-          </Carousel>
-        </div>
+      {/* Hero Image */}
+      <div className="p-4 w-full" id="aboutBack">
+        <Image src={p1} className="object-contain  w-full " />
       </div>
 
       {/* hero */}

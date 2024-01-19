@@ -24,7 +24,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="h-screen">
+    <div className="h-full">
       {/* <h1>Dashboard</h1> */}
       {/* <Button>
         <NavLink to={"/createblog"}>Create Blog</NavLink>

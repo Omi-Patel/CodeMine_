@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import me from "../Home/images/om.jpeg";
 import data from "./data";
 import dhruv from "./Images/Dhruv.jpeg";
@@ -18,6 +18,9 @@ import { NavLink } from "react-router-dom";
 import { BsGithub } from "react-icons/bs";
 import { IoLogIn } from "react-icons/io5";
 import { motion } from "framer-motion";
+
+import { Modal } from "flowbite-react";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 import {
   VerticalTimeline,
@@ -39,6 +42,8 @@ import { Blockquote } from "flowbite-react";
 
 const Portfolio = () => {
   // const arr = [1, 2, 3, 4, 5, 6, 7];
+
+  const [openModal, setOpenModal] = useState(false);
 
   const projects = data.projects;
   // console.log(projects[0]);
@@ -73,7 +78,7 @@ const Portfolio = () => {
       <div className="">
         <section className="text-gray-600 body-font ">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div className="m-4 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <div className="m-4 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center ">
               <h1 className="mx-4 title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-200">
                 About <span className="text-[#8739f9]">Me</span> .
               </h1>
@@ -95,30 +100,37 @@ const Portfolio = () => {
               </Blockquote>
               {/* <Divider className="m-4" /> */}
               <div className="flex justify-center m-4 border-t pt-8 mt-8">
-                <Button
-                  className=" font-bold text-md"
-                  color="primary"
-                  variant="bordered"
-                >
-                  <span className="text-xl">
-                    <BsGithub />
-                  </span>
-                  <NavLink to={"https://github.com/Omi-Patel"} target="_blank">
-                    Latest Project
-                  </NavLink>
-                </Button>
-                <Button
-                  className="mx-4 font-bold text-md"
-                  color="primary"
-                  variant="bordered"
-                >
-                  <span className="text-2xl">
-                    <IoLogIn />
-                  </span>
-                  <NavLink to={"https://bento.me/om-patel"} target="_blank">
-                    Follow Me
-                  </NavLink>
-                </Button>
+                <div>
+                  <Button
+                    className=" font-bold text-md"
+                    color="primary"
+                    variant="bordered"
+                  >
+                    <span className="text-xl">
+                      <BsGithub />
+                    </span>
+                    <NavLink
+                      to={"https://github.com/Omi-Patel"}
+                      target="_blank"
+                    >
+                      Latest Project
+                    </NavLink>
+                  </Button>
+                </div>
+                <div>
+                  <Button
+                    className="mx-4 font-bold text-md"
+                    color="primary"
+                    variant="bordered"
+                  >
+                    <span className="text-2xl">
+                      <IoLogIn />
+                    </span>
+                    <NavLink to={"https://bento.me/om-patel"} target="_blank">
+                      Follow Me
+                    </NavLink>
+                  </Button>
+                </div>
               </div>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 bg-gradient-to-l from-[#0B0C10] to-[#1F2833] rounded-2xl">
@@ -131,23 +143,33 @@ const Portfolio = () => {
 
               <Card className="py-4 bg-gradient-to-l from-grey-400 text-white">
                 <CardBody className="overflow-visible py-2">
-                  <Image
-                    isZoomed
-                    alt="Card background"
-                    className="object-cover rounded-xl"
-                    src={me}
-                    width={370}
-                  />
+                  <div>
+                    <Image
+                      isZoomed
+                      alt="Card background"
+                      className="object-cover rounded-xl"
+                      src={me}
+                      width={370}
+                    />
+                  </div>
                 </CardBody>
-                <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                  <h4 className="font-bold text-xl uppercase">
-                    Om <span className="text-[#8739f9]">Patel</span>
-                  </h4>
-                  <p className="text-sm text-gray-400 font-bold">
-                    Jr. Developer
-                  </p>
-                  <small className="text-default-500 font-bold">20 Male</small>
-                </CardHeader>
+                <motion.div
+                  initial={animations.twoAndThree}
+                  whileInView={animations.whileInView}
+                  transition={{ delay: 0.5 }}
+                >
+                  <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                    <h4 className="font-bold text-xl uppercase">
+                      Om <span className="text-[#8739f9]">Patel</span>
+                    </h4>
+                    <p className="text-sm text-gray-400 font-bold">
+                      Jr. Developer
+                    </p>
+                    <small className="text-default-500 font-bold">
+                      20 Male
+                    </small>
+                  </CardHeader>
+                </motion.div>
               </Card>
             </div>
           </div>
@@ -302,13 +324,12 @@ const Portfolio = () => {
                       className="flex flex-grow gap-2 items-center"
                     >
                       <Button
+                        onClick={() => setOpenModal(true)}
                         className="font-bold text-md"
                         color="danger"
                         variant="flat"
                       >
-                        <NavLink to={"#"} target="_blank">
-                          Code
-                        </NavLink>
+                        Code
                       </Button>
                     </motion.div>
                     <Button
@@ -437,6 +458,44 @@ const Portfolio = () => {
       </div>
 
       {/* Accordian */}
+
+      {/* Modal on Code Button */}
+      <div>
+        <Modal
+          show={openModal}
+          size="md"
+          onClose={() => setOpenModal(false)}
+          popup
+        >
+          <Modal.Header className="bg-[#212121]" />
+          <Modal.Body className="bg-[#212121]">
+            <div className="text-center ">
+              <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-orange-400 dark:text-gray-200" />
+              <h3 className="mb-5 text-lg font-normal text-gray-400 dark:text-gray-400">
+                Please! Contact to Admin for Accessing The Source Code !
+              </h3>
+              <div className="flex justify-center gap-4">
+                <Button
+                  className="font-medium"
+                  color="success"
+                  variant="shadow"
+                  onClick={() => setOpenModal(false)}
+                >
+                  <NavLink to={"/contact"}>Contact Admin !</NavLink>
+                </Button>
+                <Button
+                  className="font-medium"
+                  color="danger"
+                  variant="shadow"
+                  onClick={() => setOpenModal(false)}
+                >
+                  No, cancel
+                </Button>
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal>
+      </div>
     </div>
   );
 };

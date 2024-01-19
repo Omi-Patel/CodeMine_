@@ -20,6 +20,7 @@ import { FaHome } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
 import { ImBlog } from "react-icons/im";
 import { BiSolidMessageRoundedEdit } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 
@@ -60,9 +61,14 @@ export default function App() {
           <span className="text-3xl mr-2">
             <FaCode />
           </span>
-          <p className="font-bold text-inherit text-3xl" id="logo">
+          <motion.p
+            initial={{ opacity: 0, x: "-100%" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="font-bold text-inherit text-3xl"
+            id="logo"
+          >
             <NavLink to={"/"}>CodeMine_</NavLink>
-          </p>
+          </motion.p>
         </NavbarBrand>
         <div className="flex justify-evenly w-96 mx-36 p-2">
           <NavbarItem className="hover:text-[#8FD6E8] font-bold delay-100">
@@ -71,7 +77,13 @@ export default function App() {
               color="foreground"
               to="/"
             >
-              HOME
+              <motion.h1
+                initial={{ opacity: 0, y: "-100%" }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                HOME
+              </motion.h1>
             </NavLink>
           </NavbarItem>
           <NavbarItem className="hover:text-[#8FD6E8] font-bold ease-in-out delay-100">
@@ -80,7 +92,13 @@ export default function App() {
               color="foreground"
               to="/about"
             >
-              ABOUT
+              <motion.h1
+                initial={{ opacity: 0, y: "-100%" }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                ABOUT
+              </motion.h1>
             </NavLink>
           </NavbarItem>
           <NavbarItem className="hover:text-[#8FD6E8] font-bold ease-in-out delay-100">
@@ -89,7 +107,13 @@ export default function App() {
               color="foreground"
               to="/blog"
             >
-              BLOGS
+              <motion.h1
+                initial={{ opacity: 0, y: "-100%" }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                BLOGS
+              </motion.h1>
             </NavLink>
           </NavbarItem>
 
@@ -99,7 +123,13 @@ export default function App() {
               color="foreground"
               to="/contact"
             >
-              CONTACT
+              <motion.h1
+                initial={{ opacity: 0, y: "-100%" }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+              >
+                CONTACT
+              </motion.h1>
             </NavLink>
           </NavbarItem>
         </div>

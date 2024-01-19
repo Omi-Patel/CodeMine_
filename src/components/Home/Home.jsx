@@ -23,37 +23,37 @@ const Home = () => {
       </div> */}
 
       <div className="h-full bg-gradient-to-r from-[#0B0C10] to-[#1F2833]">
-        <section className="text-gray-400 body-font ">
+        <section className="text-gray-300 body-font ">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center p-16">
               <div className="m-4 mx-auto">
                 <motion.h1
                   initial={{ opacity: 0, y: "-100%" }}
                   whileInView={{ opacity: 1, y: "0" }}
-                  className="text-center p-4 title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100 tracking-wide"
+                  className="text-center px-8 title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100 tracking-wide"
                 >
                   "Explore, Engage, Evolve: Your Source for Dynamic Content"
                 </motion.h1>
-                <p className="text-center p-4 leading-relaxed font-semibold ">
-                  Greetings, Dear readers, and welcome to CodeMine ! We are
+                <p className="text-center p-10 leading-relaxed font-medium tracking-wide ">
+                  Greetings, Dear readers, and welcome to <span className="text-[#8739f9]">CodeMine</span> ! We are
                   thrilled to have you here, ready to embark on a journey of
                   discovery, inspiration, and growth. This digital space is more
                   than a blog; it's a haven for minds seeking enrichment and
                   hearts yearning for connection.
                 </p>
               </div>
-              <div className="flex justify-center items-center m-4 mx-auto">
+              <div className="flex justify-center items-center m-2 mx-auto">
                 <motion.div
                   initial={{ y: "-100%", opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
                   <Button
-                    className="mx-4 font-bold text-md"
+                    className="mx-3 font-bold text-md"
                     color="primary"
                     variant="bordered"
                   >
-                    <span className="text-xl">
+                    <span className="text-md">
                       <FaBloggerB />
                     </span>
                     <NavLink to={"/blog"}>Blogs</NavLink>
@@ -69,7 +69,7 @@ const Home = () => {
                     color="primary"
                     variant="bordered"
                   >
-                    <span className="text-xl">
+                    <span className="text-md">
                       <BsGithub />
                     </span>
                     <NavLink
@@ -87,11 +87,11 @@ const Home = () => {
                   transition={{ delay: 0.8 }}
                 >
                   <Button
-                    className="mx-4 font-bold text-md"
+                    className="mx-3 font-bold text-md"
                     color="primary"
                     variant="bordered"
                   >
-                    <span className="text-xl">
+                    <span className="text-md">
                       <FaPager />
                     </span>
                     Resume
