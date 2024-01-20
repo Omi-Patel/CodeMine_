@@ -1,13 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import myContext from "../../context/myContext";
-import { doc, getDoc } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  onSnapshot,
+  orderBy,
+  query,
+} from "firebase/firestore";
 import { fireDB } from "../../firebase/firebaseConfig";
 import Loader from "../Loader/Loader";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { Button } from "@nextui-org/react";
 import { BiSolidLike } from "react-icons/bi";
 import { BiSolidDislike } from "react-icons/bi";
+import { toast } from "react-toastify";
 
 const BlogInfo = () => {
   // let { id } = useParams();
@@ -22,14 +31,7 @@ const BlogInfo = () => {
   //* getBlogs State
   const [getBlogs, setGetBlogs] = useState();
   const [viewCount, setViewCount] = useState(0);
-
-  // const incrementViewCount = () => {
-  //   setViewCount((prevCount) => prevCount + 1);
-  //   localStorage.setItem(
-  //     params.id,
-  //     Number(localStorage.getItem(params.id)) + 1
-  //   );
-  // };
+  const [selected, setSelected] = useState(false);
 
   const getAllBlogs = async () => {
     setloading(true);
@@ -131,27 +133,9 @@ const BlogInfo = () => {
                   )}
                 ></div>
               </div>
-
-              {/* <div>
-                <Button onClick={incrementViewCount}>
-                  <span>
-                    <BiSolidLike />
-                  </span>
-                  {localStorage.getItem(params.id)}
-                </Button>
-              </div> */}
             </div>
           )}
         </div>
-
-        {/* <Comment
-          addComment={addComment}
-          commentText={commentText}
-          setcommentText={setCommentText}
-          allComment={allComment}
-          fullName={fullName}
-          setFullName={setFullName}
-        /> */}
       </section>
     </div>
   );
