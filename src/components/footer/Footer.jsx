@@ -55,7 +55,10 @@ export default function Component() {
                 className="tracking-widest text-[#8739F9] font-bold "
               />
               <Footer.LinkGroup col className="text-white ">
-                <NavLink to="#" className="hover:text-[#8FD6E8]">
+                <NavLink
+                  to="https://github.com/Omi-Patel"
+                  className="hover:text-[#8FD6E8]"
+                >
                   Github
                 </NavLink>
                 <NavLink
@@ -93,27 +96,32 @@ export default function Component() {
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon
               className="hover:text-[#1877f2]"
-              href="#"
+              href="https://bento.me/om-patel"
+              target="_blank"
               icon={BsFacebook}
             />
             <Footer.Icon
               className="hover:text-[#c32aa3]"
-              href="#"
+              href="https://bento.me/om-patel"
+              target="_blank"
               icon={BsInstagram}
             />
             <Footer.Icon
               className="hover:text-[#1da1f2]"
-              href="#"
+              href="https://bento.me/om-patel"
+              target="_blank"
               icon={BsTwitter}
             />
             <Footer.Icon
               className="hover:text-[#8FD6E8]"
-              href="#"
+              href="https://github.com/Omi-Patel"
+              target="_blank"
               icon={BsGithub}
             />
             <Footer.Icon
               className="hover:text-[#0a66c2]"
-              href="#"
+              href="https://bento.me/om-patel"
+              target="_blank"
               icon={BsDribbble}
             />
           </div>

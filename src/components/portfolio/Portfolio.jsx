@@ -78,7 +78,7 @@ const Portfolio = () => {
       <div className="">
         <section className="text-gray-600 body-font ">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div className="m-4 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center ">
+            <div className="m-4 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center w-full">
               <h1 className="mx-4 title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-200">
                 About <span className="text-[#8739f9]">Me</span> .
               </h1>
@@ -99,7 +99,7 @@ const Portfolio = () => {
                 valueable asset to any web development team.
               </Blockquote>
               {/* <Divider className="m-4" /> */}
-              <div className="flex justify-center m-4 border-t pt-8 mt-8">
+              <div className="flex justify-center items-center  border-t pt-4 mx-4 mt-4">
                 <div>
                   <Button
                     className=" font-bold text-md"

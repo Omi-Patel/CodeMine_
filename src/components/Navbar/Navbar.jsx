@@ -138,7 +138,7 @@ export default function App() {
       <NavbarContent justify="end">
         <NavbarItem>
           <Button color="primary" variant="bordered" className="font-bold">
-            <span className="text-2xl">
+            <span className="text-xl">
               <IoLogIn />
             </span>
             <NavLink to={"/portfolio"}>PORTFOLIO</NavLink>
