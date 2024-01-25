@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -25,6 +25,13 @@ import { motion } from "framer-motion";
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 
 export default function App() {
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   useEffect(() => {

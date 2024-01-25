@@ -134,13 +134,6 @@ const Portfolio = () => {
               </div>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 bg-gradient-to-l from-[#0B0C10] to-[#1F2833] rounded-2xl">
-              {/* <Image
-                isZoomed
-                className="object-cover object-center rounded"
-                alt="hero"
-                src="https://dummyimage.com/720x600"
-              /> */}
-
               <Card className="py-4 bg-gradient-to-l from-grey-400 text-white">
                 <CardBody className="overflow-visible py-2">
                   <div>
@@ -287,7 +280,7 @@ const Portfolio = () => {
           {projects.map((e, index) => {
             return (
               <motion.div
-                whileInView={animations.whileInView}
+                animate={animations.whileInView}
                 initial={animations.one}
                 transition={{ delay: 0.5 }}
                 className=" m-4 auto-rows-fr inline-block"
@@ -349,33 +342,6 @@ const Portfolio = () => {
         </div>
 
         {/* work section use of carousel */}
-
-        {/* <div className="border-2 m-4 w-[80%] mx-auto">
-          {
-            <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 border-2 m-6">
-              <Carousel className="border-4 h-full">
-                {arr.map((e, index) => {
-                  return (
-                    <div className=" flex">
-                      <div className="w-[50%]  bg-black">
-                        <img
-                          className="z-0"
-                          src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-                          alt="..."
-                        />
-
-                        <h1 className="text-center">Left</h1>
-                      </div>
-                      <div className=" text-white text-center bg-blue-900 z-10 w-[50%] mx-auto">
-                        <h1>Project {index}</h1>
-                      </div>
-                    </div>
-                  );
-                })}
-              </Carousel>
-            </div>
-          }
-        </div> */}
       </div>
 
       {/* testimonial */}
