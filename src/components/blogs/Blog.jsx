@@ -4,11 +4,9 @@ import me from "../Home/images/me3.jpg";
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-import client from "../../contentfullClient/contentfull";
 import myContext from "../../context/myContext";
 import Loader from "../Loader/Loader";
 import { MdDashboardCustomize } from "react-icons/md";
-// import client from "../../contentfullClient/contentfull";
 
 const arr = [1, 2, 3];
 
@@ -27,10 +25,6 @@ const Blog = () => {
 
   return (
     <div className="h-full bg-gradient-to-r from-[#0B0C10] to-[#1F2833]">
-      {/* <div id="aboutBack">
-        <div id="text">Read Blogs On CodeMine_</div>
-      </div> */}
-
       <div className=" p-4 flex justify-end">
         <Button color="success" variant="shadow" className="font-bold text-xl">
           <span>

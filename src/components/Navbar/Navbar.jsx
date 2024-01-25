@@ -42,7 +42,7 @@ export default function App() {
 
   return (
     <Navbar
-      className="bg-[#242424] text-white"
+      className="bg-[#242424] text-white z-10"
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}

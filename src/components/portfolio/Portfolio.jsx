@@ -140,7 +140,7 @@ const Portfolio = () => {
                     <Image
                       isZoomed
                       alt="Card background"
-                      className="object-cover rounded-xl"
+                      className="object-cover rounded-xl z-5"
                       src={me}
                       width={370}
                     />
