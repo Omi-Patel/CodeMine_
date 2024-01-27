@@ -156,7 +156,7 @@ const Portfolio = () => {
                       Om <span className="text-[#8739f9]">Patel</span>
                     </h4>
                     <p className="text-sm text-gray-400 font-bold">
-                      Jr. Developer
+                      IT Student.
                     </p>
                     <small className="text-default-500 font-bold">
                       20 Male
