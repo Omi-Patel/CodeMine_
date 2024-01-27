@@ -23,16 +23,15 @@ const Contact = () => {
           (result) => {
             console.log(result.text);
             toast.success("Message Sent Successfully !");
+            setName("");
+            setEmail("");
+            setMessage("");
           },
           (error) => {
             console.log(error.text);
             toast.error("Try Again !");
           }
         );
-
-      setName("");
-      setEmail("");
-      setMessage("");
 
       //ee
     } catch (error) {
