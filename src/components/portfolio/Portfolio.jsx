@@ -180,52 +180,18 @@ const Portfolio = () => {
             className="vertical-timeline-element--work"
             contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            date="2019 - 2021"
+            date="2024 - Present"
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#212121" }}
-            icon={<BiSolidSchool />}
-          >
-            <h3 className="vertical-timeline-element-title text-xl">
-              Higher Secondary
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle text-gray-200">
-              The Ambika Highschool, GJ
-            </h4>
-            <p>
-              Completed the journey of High School and planning for Higher
-              Study, most probably Engineering.
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            date="2021 - 2025"
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#212121" }}
-            icon={<IoSchoolSharp />}
-          >
-            <h3 className="vertical-timeline-element-title">Engineering</h3>
-            <h4 className="vertical-timeline-element-subtitle">SVIT, Vasad</h4>
-            <p>
-              After completing high school, got addmission into the Engineering
-              Collage and looking forward-
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            date="2021 - 2022"
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#212121" }}
-            icon={<CgWebsite />}
+            icon={<MdEngineering />}
           >
             <h3 className="vertical-timeline-element-title">
-              Frontend Web Development
+              Upcoming Software Engineer
             </h3>
-            <h4 className="vertical-timeline-element-subtitle">SVIT, GJ</h4>
+            <h4 className="vertical-timeline-element-subtitle">Gujarat, IN</h4>
             <p>
-              Fall into the world of Web Development, Learnt Different
-              Technologies like HTML, CSS, JavaScript, Git and GitHub etc.
-              Programming Languages : Java, C.
+              After learning the core subject : DBMS, DS, OS, CN etc. Looking
+              for opportunity to serve my knowledge. Journey Never stop, always
+              excited to explore new things in this Era of Technology.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -251,18 +217,73 @@ const Portfolio = () => {
             className="vertical-timeline-element--work"
             contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            date="2024 - Present"
+            date="2021 - 2022"
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#212121" }}
-            icon={<MdEngineering />}
+            icon={<CgWebsite />}
           >
             <h3 className="vertical-timeline-element-title">
-              Upcoming Software Engineer
+              Web Dev Internships !
             </h3>
-            <h4 className="vertical-timeline-element-subtitle">Gujarat, IN</h4>
+            <h4 className="vertical-timeline-element-subtitle">Remote, IN</h4>
             <p>
-              After learning the core subject : DBMS, DS, OS, CN etc. Looking
-              for opportunity to serve my knowledge. Journey Never stop, always
-              excited to explore new things in this Era of Technology.
+              I have completed an Internships @ <b>Let's GrowMore</b> and <b> BharatIntern </b>
+              as a role of Frontend Intern. Where I've applied the Technologies
+              such as HTML, CSS and JavaScript and Frontend Library called
+              ReactJs. Where I learnt how to write and maintain an efficient
+              code.
+            </p>
+          </VerticalTimelineElement>
+
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+            date="2021 - 2022"
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#212121" }}
+            icon={<CgWebsite />}
+          >
+            <h3 className="vertical-timeline-element-title">
+              Frontend Web Development
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">SVIT, GJ</h4>
+            <p>
+              Fall into the world of Web Development, Learnt Different
+              Technologies like HTML, CSS, JavaScript, Git and GitHub etc.
+              Programming Languages : Java, C.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+            date="2021 - 2025"
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#212121" }}
+            icon={<IoSchoolSharp />}
+          >
+            <h3 className="vertical-timeline-element-title">Engineering</h3>
+            <h4 className="vertical-timeline-element-subtitle">SVIT, Vasad</h4>
+            <p>
+              After completing high school, got addmission into the Engineering
+              Collage and looking forward-
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+            date="2019 - 2021"
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#212121" }}
+            icon={<BiSolidSchool />}
+          >
+            <h3 className="vertical-timeline-element-title text-xl">
+              Higher Secondary
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle text-gray-200">
+              The Ambika Highschool, GJ
+            </h4>
+            <p>
+              Completed the journey of High School and planning for Higher
+              Study, most probably Engineering.
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
