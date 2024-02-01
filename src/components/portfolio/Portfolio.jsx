@@ -39,6 +39,8 @@ import { MdEngineering } from "react-icons/md";
 import { Blockquote } from "flowbite-react";
 // import { Carousel } from "flowbite-react";
 // import { Card } from "flowbite-react";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { IoMdCodeDownload } from "react-icons/io";
 
 const Portfolio = () => {
   // const arr = [1, 2, 3, 4, 5, 6, 7];
@@ -226,7 +228,8 @@ const Portfolio = () => {
             </h3>
             <h4 className="vertical-timeline-element-subtitle">Remote, IN</h4>
             <p>
-              I have completed an Internships @ <b>Let's GrowMore</b> and <b> BharatIntern </b>
+              I have completed an Internships @ <b>Let's GrowMore</b> and{" "}
+              <b> BharatIntern </b>
               as a role of Frontend Intern. Where I've applied the Technologies
               such as HTML, CSS and JavaScript and Frontend Library called
               ReactJs. Where I learnt how to write and maintain an efficient
@@ -344,6 +347,9 @@ const Portfolio = () => {
                         variant="flat"
                       >
                         Code
+                        {/* <span className="text-2xl gap-0">
+                          <IoMdCodeDownload />
+                        </span> */}
                       </Button>
                     </motion.div>
                     <Button
@@ -354,6 +360,9 @@ const Portfolio = () => {
                       <NavLink to={e.url} target="_blank">
                         Live Link
                       </NavLink>
+                      <span className="text-blue-800 ">
+                        <FaExternalLinkAlt />
+                      </span>
                     </Button>
                   </CardFooter>
                 </Card>
