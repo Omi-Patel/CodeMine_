@@ -130,7 +130,7 @@ const CreateBlog = () => {
       <div className="mt-4">
         <label htmlFor="editor">Content Body /</label>
         <Editor
-          apiKey="5q5d8ffxuowsmao59j00xt3uai28xei7rkq8l6opze12lxdq"
+          apiKey="wkcums0dw96tmwupjv7t1du24vt9934f2hjqrs4jrpizdc1y"
           onEditorChange={(newValue, editor) => {
             setBlogs({ ...blogs, content: newValue });
             setText(editor.getContent({ format: "text" }));
