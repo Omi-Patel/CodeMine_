@@ -129,7 +129,9 @@ const CreateBlog = () => {
       {/* Four Editor  */}
       <div className="mt-4">
         <label htmlFor="editor">Content Body /</label>
-        <Editor
+
+        {/* old editor */}
+        {/* <Editor
           apiKey="wkcums0dw96tmwupjv7t1du24vt9934f2hjqrs4jrpizdc1y"
           onEditorChange={(newValue, editor) => {
             setBlogs({ ...blogs, content: newValue });
@@ -142,6 +144,35 @@ const CreateBlog = () => {
             plugins:
               "a11ychecker advcode advlist advtable anchor autocorrect autolink autoresize autosave casechange charmap checklist code codesample directionality editimage emoticons export footnotes formatpainter fullscreen help image importcss inlinecss insertdatetime link linkchecker lists media mediaembed mentions mergetags nonbreaking pagebreak pageembed permanentpen powerpaste preview quickbars save searchreplace table tableofcontents template  tinydrive tinymcespellchecker typography visualblocks visualchars wordcount",
           }}
+        /> */}
+
+        {/* new editor */}
+        <Editor
+          apiKey="4crjt6ksplh7a847suru8byqnn2eaxt0exm3ynkqmew9t2sv"
+          onEditorChange={(newValue, editor) => {
+            setBlogs({ ...blogs, content: newValue });
+            setText(editor.getContent({ format: "text" }));
+          }}
+          onInit={(evt, editor) => {
+            setText(editor.getContent({ format: "text" }));
+          }}
+          init={{
+            plugins:
+              "ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss",
+            toolbar:
+              "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+            tinycomments_mode: "embedded",
+            tinycomments_author: "Author name",
+            mergetags_list: [
+              { value: "First.Name", title: "First Name" },
+              { value: "Email", title: "Email" },
+            ],
+            ai_request: (request, respondWith) =>
+              respondWith.string(() =>
+                Promise.reject("See docs to implement AI Assistant")
+              ),
+          }}
+          // initialValue="Welcome to TinyMCE!"
         />
       </div>
       {/* Fifth, Button */}
