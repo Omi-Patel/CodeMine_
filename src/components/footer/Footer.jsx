@@ -89,7 +89,7 @@ export default function Component() {
         <Footer.Divider />
         <div className="w-full sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright
-            by=" @CodeMine, Created With ❤️"
+            by=" @CodeMine, Created With ❤️ By Om Patel !"
             year={2024}
             className="text-white text-md"
           />

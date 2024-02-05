@@ -23,6 +23,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Dashboard from "./components/blogs/Dashboard";
 import AdminLogin from "./components/AdminLogin/AdminLogin";
 import MyState from "./context/myState";
+import GoToTop from "./components/goTop/GoToTop";
 
 const App = () => {
   return (
@@ -61,6 +62,7 @@ const App = () => {
             pauseOnHover
             theme="colored"
           />
+          <GoToTop />
           <Footer />
         </Router>
       </MyState>
