@@ -60,8 +60,8 @@ const BlogInfo = () => {
   }
 
   return (
-    <div>
-      <section className="rounded-lg h-full overflow-hidden max-w-4xl mx-auto px-4 ">
+    <div className="bg-gradient-to-l from-[#0B0C10] to-[#1F2833]">
+      <section className="rounded-lg h-full overflow-hidden max-w-4xl mx-auto px-4">
         {/* go back */}
         <div className="flex gap-2 items-center mt-4">
           <NavLink to={"/blog"}>
