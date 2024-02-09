@@ -29,8 +29,8 @@ const About = () => {
   return (
     <div className="h-full bg-gradient-to-l from-[#0B0C10] to-[#1F2833]">
       {/* Hero Image */}
-      <div className="p-4 w-full" id="aboutBack">
-        <Image src={p1} className="object-contain flex  w-full mx-auto" />
+      <div className="p-4 w-full flex mx-auto" id="aboutBack">
+        <Image src={p1} className="object-contain" />
       </div>
 
       {/* hero */}
