@@ -24,8 +24,11 @@ import Dashboard from "./components/blogs/Dashboard";
 import AdminLogin from "./components/AdminLogin/AdminLogin";
 import MyState from "./context/myState";
 import GoToTop from "./components/goTop/GoToTop";
+import { inject } from "@vercel/analytics";
 
 const App = () => {
+  inject();
+
   return (
     <>
       <MyState>
