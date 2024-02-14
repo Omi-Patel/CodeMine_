@@ -7,6 +7,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const AdminLogin = () => {
+
+
   const [openModal, setOpenModal] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +23,7 @@ const AdminLogin = () => {
   const login = () => {
     if (email === "" || password === "") {
       return toast.info("Provide All The Details !");
-    } else if (email !== "admin@gmail.com" || password !== "adminpassword123") {
+    } else if (email !== import.meta.env.VITE_ADMIN_EMAIL || password !== import.meta.env.VITE_ADMIN_PASSWORD) {
       return toast.error("Invalid Credentials !");
     } else {
       toast.success("Logged In Successfully !");
