@@ -25,11 +25,9 @@ import AdminLogin from "./components/AdminLogin/AdminLogin";
 import MyState from "./context/myState";
 import GoToTop from "./components/goTop/GoToTop";
 import { inject } from "@vercel/analytics";
-import { injectSpeedInsights } from "@vercel/speed-insights";
 
 const App = () => {
   inject();
-  injectSpeedInsights();
 
   return (
     <>
