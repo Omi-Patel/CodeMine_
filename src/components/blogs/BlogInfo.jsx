@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import myContext from "../../context/myContext";
 import {
+  Timestamp,
   addDoc,
   collection,
   doc,
@@ -17,6 +18,7 @@ import { Button } from "@nextui-org/react";
 import { BiSolidLike } from "react-icons/bi";
 import { BiSolidDislike } from "react-icons/bi";
 import { toast } from "react-toastify";
+import Comment from "../comment/Comment";
 
 const BlogInfo = () => {
   // let { id } = useParams();
@@ -59,8 +61,69 @@ const BlogInfo = () => {
     return { __html: c };
   }
 
+  // Comment Portion
+
+  const [fullName, setFullName] = useState("");
+  const [commentText, setCommentText] = useState("");
+
+  // add comment
+  const addComment = async () => {
+    const commentRef = collection(
+      fireDB,
+      "blogPost/" + `${params.id}/` + "comment"
+    );
+    try {
+      if (fullName === "" || commentText === "") {
+        return toast.info("Please Write Something!");
+      }
+
+      await addDoc(commentRef, {
+        fullName,
+        commentText,
+        time: Timestamp.now(),
+        date: new Date().toLocaleString("en-US", {
+          month: "short",
+          day: "2-digit",
+          year: "numeric",
+        }),
+      });
+      toast.success("Comment Added Successfully");
+      setFullName("");
+      setCommentText("");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const [allComment, setAllComment] = useState([]);
+
+  // get comment
+  const getcomment = async () => {
+    try {
+      const q = query(
+        collection(fireDB, "blogPost/" + `${params.id}/` + "comment/"),
+        orderBy("time")
+      );
+      const data = onSnapshot(q, (QuerySnapshot) => {
+        let productsArray = [];
+        QuerySnapshot.forEach((doc) => {
+          productsArray.push({ ...doc.data(), id: doc.id });
+        });
+        setAllComment(productsArray);
+        console.log(productsArray);
+      });
+      return () => data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getcomment();
+  }, []);
+
   return (
-    <div className="bg-gradient-to-l from-[#0B0C10] to-[#1F2833]">
+    <div className="bg-gradient-to-l from-[#0B0C10] to-[#1F2833] flex forcmnt">
       <section className="rounded-lg h-full overflow-hidden max-w-4xl mx-auto px-4">
         {/* go back */}
         <div className="flex gap-2 items-center mt-4">
@@ -137,6 +200,17 @@ const BlogInfo = () => {
           )}
         </div>
       </section>
+
+      <div className=" m-2 p-6 rounded-lg bg-black cmnt">
+        <Comment
+          addComment={addComment}
+          commentText={commentText}
+          setcommentText={setCommentText}
+          allComment={allComment}
+          fullName={fullName}
+          setFullName={setFullName}
+        />
+      </div>
     </div>
   );
 };

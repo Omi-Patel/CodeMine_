@@ -7,6 +7,7 @@
 }
 
 body {
+  /* cursor: url('./assets/images/cursor.png'), auto; */
   background-color: #591a9492;
   background-color: #03131a;
   color: whitesmoke;
@@ -85,5 +86,33 @@ body::-webkit-scrollbar-thumb {
   }
   100% {
     transform: translateY(0.2rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .forcmnt{
+    flex-direction: column;
+  }
+  .omi{
+    width: 100%;
+    font-size: 15px;
+    word-wrap: break-word;
+  }
+  .cmnt {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+   
+    background-color: transparent;
+    box-shadow: 2px 2px 2px rgba(0, 0, 255, 0.555),
+      -2px -2px 2px rgba(0, 0, 255, 0.555);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cmnt{
+    width: 30%;
+    word-wrap: break-word;
+
   }
 }
