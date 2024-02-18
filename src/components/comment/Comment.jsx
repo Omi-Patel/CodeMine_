@@ -28,7 +28,7 @@ const Comment = ({
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               type="text"
-              placeholder="Enter Full Name"
+              placeholder="Enter Your Name"
               className="px-0 w-full text-sm border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-700 bg-transparent"
             />
           </div>
