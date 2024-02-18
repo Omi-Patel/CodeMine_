@@ -135,7 +135,7 @@ const BlogInfo = () => {
           <h1 className="text-3xl">Back !</h1>
         </div>
 
-        <div className=" py-4 lg:py-8">
+        <div className=" py-4 lg:py-8 wrap">
           {loading ? (
             <Loader />
           ) : (
@@ -187,7 +187,7 @@ const BlogInfo = () => {
 
                         [&>li]:list-decimal [&>ol]:mb-2
 
-                        [&>pre]:bg-white [&>pre]:text-black [&>pre]:mb-2 [&>pre]:p-2
+                        [&>pre]:bg-white [&>pre]:text-black [&>pre]:font-bold [&>pre]:mb-2 [&>pre]:p-2 [&>pre]:text-wrap
                         
                         [&>img]:rounded-lg
                         `}
@@ -201,7 +201,7 @@ const BlogInfo = () => {
         </div>
       </section>
 
-      <div className=" m-2 p-6 rounded-lg bg-black cmnt">
+      <div className=" m-4 p-2 rounded-lg bg-black cmnt">
         <Comment
           addComment={addComment}
           commentText={commentText}
