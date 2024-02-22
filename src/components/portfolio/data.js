@@ -6,6 +6,8 @@ import shery from "./Images/sheryjs.png";
 import techy from "./Images/techystar.png";
 import video from "./Images/videoHUB.png";
 import digital from "./Images/XCrypto.jpg";
+import npm from "./Images/npm.png";
+import crypto from "./Images/crypto.png";
 
 const data = {
   projects: [
@@ -71,6 +73,24 @@ const data = {
       description: "All About Me at one place. Made using Chakra UI.",
       url: "https://omreactport.netlify.app/",
       imgSrc: portfolio,
+    },
+
+    {
+      id: 9,
+      title: "motivate.js",
+      description:
+        "An NPM Package that will show you the motivational quote while error gets occure.",
+      url: "https://www.npmjs.com/package/motivatejs",
+      imgSrc: npm,
+    },
+
+    {
+      id: 10,
+      title: "CryptoVerse",
+      description:
+        "The Platform where you can see all the details about digital currencies and explore it.",
+      url: "https://crypto-verse07.netlify.app/",
+      imgSrc: crypto,
     },
   ],
 };
