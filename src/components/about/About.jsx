@@ -68,14 +68,18 @@ const About = () => {
               </Blockquote>
               <div className="flex justify-center">
                 <Button
-                  className="m-4 font-bold text-md"
+                  className="m-4 font-bold text-md px-0"
                   color="primary"
                   variant="bordered"
                 >
-                  <span className="text-xl">
-                    <FaBloggerB />
-                  </span>
-                  <NavLink to={"/blog"}>Read Blogs</NavLink>
+                  <NavLink to={"/blog"}>
+                    <div className="flex justify-center items-center gap-2 p-4">
+                      <span className="text-xl">
+                        <FaBloggerB />
+                      </span>
+                      Read Blogs
+                    </div>
+                  </NavLink>
                 </Button>
               </div>
             </div>
@@ -133,14 +137,18 @@ const About = () => {
                     .
                   </p>
                   <Button
-                    className=" font-bold text-md"
+                    className=" font-bold text-md px-0"
                     color="primary"
                     variant="bordered"
                   >
-                    <span className="text-2xl">
-                      <IoLogIn />
-                    </span>
-                    <NavLink to={"/portfolio"}>About Me!</NavLink>
+                    <NavLink to={"/portfolio"}>
+                      <div className="flex justify-center items-center gap-2 p-4">
+                        <span className="text-2xl">
+                          <IoLogIn />
+                        </span>
+                        About Me!
+                      </div>
+                    </NavLink>
                   </Button>
                 </div>
               </div>

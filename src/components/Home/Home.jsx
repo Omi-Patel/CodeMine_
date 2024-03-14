@@ -49,7 +49,7 @@ const Home = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <Button
+                  {/* <Button
                     className="mx-3 font-bold text-md"
                     color="primary"
                     variant="bordered"
@@ -58,6 +58,21 @@ const Home = () => {
                       <FaBloggerB />
                     </span>
                     <NavLink to={"/blog"}>Blogs</NavLink>
+                  </Button> */}
+
+                  <Button
+                    className="mx-3 font-bold text-md px-0"
+                    color="primary"
+                    variant="bordered"
+                  >
+                    <NavLink to={"/blog"}>
+                      <div className="flex justify-center items-center gap-2 p-4">
+                        <span className="text-md">
+                          <FaBloggerB />
+                        </span>
+                        Blogs
+                      </div>
+                    </NavLink>
                   </Button>
                 </motion.div>
                 <motion.div
@@ -66,18 +81,20 @@ const Home = () => {
                   transition={{ delay: 0.5 }}
                 >
                   <Button
-                    className="font-bold text-md"
+                    className="font-bold text-md px-0"
                     color="primary"
                     variant="bordered"
                   >
-                    <span className="text-md">
-                      <BsGithub />
-                    </span>
                     <NavLink
                       to={"https://github.com/Omi-Patel"}
                       target="_blank"
                     >
-                      GitHub
+                      <div className="flex justify-center items-center gap-2 p-4">
+                        <span className="text-md">
+                          <BsGithub />
+                        </span>
+                        GitHub
+                      </div>
                     </NavLink>
                   </Button>
                 </motion.div>
@@ -88,14 +105,16 @@ const Home = () => {
                   transition={{ delay: 0.8 }}
                 >
                   <Button
-                    className="m-3 font-bold text-md"
+                    className="m-3 font-bold text-md px-0"
                     color="primary"
                     variant="bordered"
                   >
-                    <span className="text-md">
-                      <FaPager />
-                    </span>
-                    Resume
+                    <div className="flex justify-center items-center gap-2 p-4">
+                      <span className="text-md">
+                        <FaPager />
+                      </span>
+                      Resume
+                    </div>
                   </Button>
                 </motion.div>
               </div>

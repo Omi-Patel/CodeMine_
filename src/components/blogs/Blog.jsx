@@ -79,16 +79,18 @@ const Blog = () => {
                                 </p>
                                 <div className="flex items-center flex-wrap ">
                                   <Button
-                                    className="font-bold text-md "
+                                    className="font-bold text-md px-0"
                                     color="primary"
                                     variant="bordered"
                                   >
                                     <NavLink to={`/bloginfo/${id}`}>
-                                      Read More
+                                      <div className="flex justify-center items-center gap-2 p-4">
+                                        Read More
+                                        <span>
+                                          <FaArrowRight />
+                                        </span>
+                                      </div>
                                     </NavLink>
-                                    <span>
-                                      <FaArrowRight />
-                                    </span>
                                   </Button>
                                   <span className="text-gray-400 border-r-2 mr-2 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-2 py-1  border-gray-200">
                                     {date}

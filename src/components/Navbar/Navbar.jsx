@@ -144,11 +144,15 @@ export default function App() {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button color="primary" variant="bordered" className="font-bold">
-            <span className="text-xl">
-              <IoLogIn />
-            </span>
-            <NavLink to={"/portfolio"}>PORTFOLIO</NavLink>
+          <Button color="primary" variant="bordered" className="font-bold px-0">
+            <NavLink to={"/portfolio"}>
+              <div className="flex justify-center items-center gap-2 p-4">
+                <span className="text-xl">
+                  <IoLogIn />
+                </span>
+                PORTFOLIO
+              </div>
+            </NavLink>
           </Button>
         </NavbarItem>
       </NavbarContent>
