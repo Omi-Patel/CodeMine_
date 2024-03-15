@@ -109,12 +109,17 @@ const Home = () => {
                     color="primary"
                     variant="bordered"
                   >
-                    <div className="flex justify-center items-center gap-2 p-4">
-                      <span className="text-md">
-                        <FaPager />
-                      </span>
-                      Resume
-                    </div>
+                    <a
+                      href="https://drive.google.com/file/d/1gvz3Fk8WKpl13GaA_-ulIvZrwXAZ_VO3/view?usp=sharing"
+                      target="_blank"
+                    >
+                      <div className="flex justify-center items-center gap-2 p-4">
+                        <span className="text-md">
+                          <FaPager />
+                        </span>
+                        Resume
+                      </div>
+                    </a>
                   </Button>
                 </motion.div>
               </div>
