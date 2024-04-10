@@ -14,6 +14,7 @@ import {
   CardHeader,
   Image,
 } from "@nextui-org/react";
+import { ButtonGroup } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
 import { BsGithub } from "react-icons/bs";
 import { IoLogIn } from "react-icons/io5";
@@ -46,12 +47,33 @@ const Portfolio = () => {
   // const arr = [1, 2, 3, 4, 5, 6, 7];
 
   const [openModal, setOpenModal] = useState(false);
+  const [project, setProject] = useState([]);
 
-  const projects = data.projects;
+  // const projects = data.projects;
+  // const animationProject = data.animationProject;
+  // console.log(animationProject);
   // console.log(projects[0]);
+
+  // console.log(allProject);
+
+  const setAllProject = () => {
+    let allProject = [];
+    allProject.push(...data.animationProject, ...data.projects);
+    setProject(allProject);
+  };
+
+  const setFrontendProject = () => {
+    setProject(data.animationProject);
+  };
+
+  const setFullstackProject = () => {
+    setProject([]);
+    setProject(data.projects);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setAllProject();
   }, []);
 
   const animations = {
@@ -298,10 +320,40 @@ const Portfolio = () => {
           <h1 className="text-center m-8 text-4xl ">Some Works !</h1>
         </div>
 
+        {/* Button  */}
+        <div>
+          <ButtonGroup className="mx-auto w-full  p-6">
+            <Button
+              variant="flat"
+              color="primary"
+              className="font-medium tracking-widest text-medium"
+              onClick={setAllProject}
+            >
+              All
+            </Button>
+            <Button
+              variant="flat"
+              color="success"
+              className="font-medium tracking-widest text-medium"
+              onClick={setFrontendProject}
+            >
+              Frontend
+            </Button>
+            <Button
+              variant="flat"
+              color="warning"
+              className="font-medium tracking-widest text-medium"
+              onClick={setFullstackProject}
+            >
+              FullStack
+            </Button>
+          </ButtonGroup>
+        </div>
+
         {/* work card 4 in rows */}
 
-        <div className="px-4 w-[90%] mx-auto mx-4">
-          {projects.map((e, index) => {
+        <div className="px-4 w-[90%] mx-auto">
+          {project.map((e, index) => {
             return (
               <motion.div
                 animate={animations.whileInView}
@@ -315,7 +367,7 @@ const Portfolio = () => {
                   className="w-full h-[300px] col-span-12 sm:col-span-7 border-1 border-blue-600"
                 >
                   <CardHeader className="absolute z-10 flex-col items-start bg-black">
-                    <h4 className="text-white/90 font-medium text-xl uppercase  font-bold">
+                    <h4 className="text-white/90 font-medium text-xl uppercase  ">
                       {/* title */}
                       {e.title}
                     </h4>
