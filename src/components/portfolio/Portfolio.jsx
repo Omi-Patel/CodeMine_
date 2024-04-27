@@ -378,7 +378,6 @@ const Portfolio = () => {
                   </CardHeader>
 
                   <Image
-                  
                     removeWrapper
                     alt="Relaxing app background"
                     className="z-0 h-full object-contain opacity-50 hover:opacity-100"
@@ -396,7 +395,7 @@ const Portfolio = () => {
                       <Button
                         onClick={() => setOpenModal(true)}
                         className="font-bold text-md"
-                        color="danger"
+                        color="primary"
                         variant="flat"
                       >
                         Code
@@ -406,16 +405,21 @@ const Portfolio = () => {
                       </Button>
                     </motion.div>
                     <Button
-                      className="font-bold text-md"
+                      className="font-bold text-md px-0"
                       color="success"
-                      variant="bordered"
+                      variant="light"
                     >
-                      <NavLink to={e.url} target="_blank">
-                        Live Link
+                      <NavLink
+                        to={e.url}
+                        target="_blank"
+                        className="flex items-center justify-center gap-2 p-3"
+                      >
+                        <span>Live Link</span>
+
+                        <span className="text-blue-800 ">
+                          <FaExternalLinkAlt />
+                        </span>
                       </NavLink>
-                      <span className="text-blue-800 ">
-                        <FaExternalLinkAlt />
-                      </span>
                     </Button>
                   </CardFooter>
                 </Card>
