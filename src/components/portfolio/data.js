@@ -12,6 +12,8 @@ import aceUI from "./Images/aceUI.png";
 import weater from "./Images/weather.png";
 import creative from "./Images/creativeStudio.png";
 import login from "./Images/loginPage.png";
+import enotebook from "./Images/enotebook.png";
+import tiffin from "./Images/TiffinService.png";
 
 const data = {
   projects: [
@@ -71,6 +73,24 @@ const data = {
         "The Platform where you can see all the details about digital currencies and explore it.",
       url: "https://crypto-verse07.netlify.app/",
       imgSrc: crypto,
+    },
+
+    {
+      id: 15,
+      title: "eNoteBook",
+      description:
+        "The Platform where you can Create, Read, Update & Delete Your Personal Note.",
+      url: "https://e-note-front.vercel.app/",
+      imgSrc: enotebook,
+    },
+
+    {
+      id: 16,
+      title: "getYourTiffin()",
+      description:
+        "Customers can easily select their desired menu items, create orders, and make payments using Razorpay integration.",
+      url: "https://book-your-tiffin-online.vercel.app/",
+      imgSrc: tiffin,
     },
   ],
 

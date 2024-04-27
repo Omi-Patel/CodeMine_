@@ -378,6 +378,7 @@ const Portfolio = () => {
                   </CardHeader>
 
                   <Image
+                  
                     removeWrapper
                     alt="Relaxing app background"
                     className="z-0 h-full object-contain opacity-50 hover:opacity-100"
