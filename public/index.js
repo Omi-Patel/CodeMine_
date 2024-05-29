@@ -1,4 +1,4 @@
-var root = document.getElementById("root");
+let root = document.getElementById("root");
 
 root.addEventListener("mousemove", function (dets) {
   gsap.to("#cursor", {
