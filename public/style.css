@@ -1,0 +1,9 @@
+#cursor {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 100;
+  background-color: aqua;
+  box-shadow: 0px 0px 30px cyan;
+}
